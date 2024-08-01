@@ -1,0 +1,1661 @@
+\documentclass{amsart}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{enumerate}
+\usepackage{dsfont}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{cite}
+\usepackage{mathtools}
+\usepackage[normalem]{ulem}
+\usepackage{comment}
+\usepackage{xfrac}
+\usepackage{xcolor}
+\usepackage{stmaryrd}
+\usepackage{cancel}
+\usepackage{xfrac}
+\usepackage{mathrsfs}
+
+
+\Crefname{assumption}{Assumption}{Assumptions}
+\Crefname{theorem}{Theorem}{Theorems}
+\Crefname{lemma}{Lemma}{Lemmas}
+\Crefname{corollary}{Corollary}{Corollaries}
+\Crefname{proposition}{Proposition}{Propositions}
+\Crefname{theorem}{Theorem}{Theorems}
+\Crefname{conjecture}{Conjecture}{Conjectures}
+\Crefname{remark}{Remark}{Remarks}
+\Crefname{axiom}{Axiom}{Axioms}
+
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+
+
+
+\newcommand{\E}{\mathbb E}
+\newcommand{\N}{\mathbb N}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\T}{\mathbb T}
+\newcommand{\Z}{\mathbb Z}
+
+%% Pretty semi-norm brackets
+\newcommand{\lbr}{\llbracket}
+\newcommand{\rbr}{\rrbracket}
+
+
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\e}{\eps}
+\newcommand{\sgn}{\mbox{sgn}}
+\newcommand{\He}{H_\eps}
+\renewcommand{\H}{\mathbb H^d}
+\newcommand{\vp}{\varphi}
+%\newcommand{\exp}{\mbox{exp}}
+\newcommand{\sech}{\mbox{sech}}
+\newcommand{\dd}{\, \mathrm{d}}
+\newcommand{\dst}{\mbox{dist}}
+\newcommand{\init}{{\rm in}}
+\newcommand{\osc}{\mbox{osc}}
+\newcommand{\spt}{\mbox{spt}}
+\newcommand{\tand}{\text{ and }}
+\newcommand{\qtand}{\quad\tand\quad}
+\DeclareMathOperator{\Tr}{tr}
+\newcommand{\tr}{\Tr}
+\DeclareMathOperator{\id}{Id}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\1}{\mathds{1}}
+\newcommand{\vv}{\langle v\rangle}
+\newcommand{\vvp}{\langle v'\rangle}
+\newcommand{\vvO}{\langle v_0\rangle}
+\newcommand{\ww}{\langle w \rangle}
+\newcommand{\ul}{\rm ul}
+\newcommand{\vve}{\langle v_\e\rangle}
+\newcommand{\ec}{{\eps_{\rm cont}}}
+\newcommand{\dc}{{\delta_{\rm cont}}}
+\newcommand{\Ckin}{C_{\rm kin}}
+\newcommand{\les}{\lesssim}
+%\newcommand{\kin}{\text{\kin}}
+\newcommand{\loc}{\text{loc}}
+
+\renewcommand{\epsilon}{\eps}
+
+
+
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+
+\newcommand{\sA}{\mathscr{A}}
+\newcommand{\sB}{\mathscr{B}}
+\newcommand{\sC}{\mathscr{C}}
+\newcommand{\sD}{\mathscr{D}}
+\newcommand{\sE}{\mathscr{E}}
+\newcommand{\sF}{\mathscr{F}}
+\newcommand{\sG}{\mathscr{G}}
+\newcommand{\sH}{\mathscr{H}}
+\newcommand{\sI}{\mathscr{I}}
+\newcommand{\sJ}{\mathscr{J}}
+\newcommand{\sK}{\mathscr{K}}
+\newcommand{\sL}{\mathscr{L}}
+\newcommand{\sM}{\mathscr{M}}
+\newcommand{\sN}{\mathscr{N}}
+\newcommand{\sO}{\mathscr{O}}
+\newcommand{\sP}{\mathscr{P}}
+\newcommand{\sQ}{\mathscr{Q}}
+\newcommand{\sR}{\mathscr{R}}
+\newcommand{\sS}{\mathscr{S}}
+\newcommand{\sT}{\mathscr{T}}
+\newcommand{\sU}{\mathscr{U}}
+\newcommand{\sV}{\mathscr{V}}
+\newcommand{\sW}{\mathscr{W}}
+\newcommand{\sX}{\mathscr{X}}
+\newcommand{\sY}{\mathscr{Y}}
+\newcommand{\sZ}{\mathscr{Z}}
+
+
+
+
+
+\newcommand{\dz}{\, dz}
+\newcommand{\dtz}{\, d\tilde z}
+\newcommand{\dv}{\,dv}
+\newcommand{\dx}{\,dx}
+\newcommand{\dt}{\,dt}
+\newcommand{\dw}{\,dw}
+\newcommand{\dr}{\,dr}
+\newcommand{\ds}{\,ds}
+\newcommand{\dy}{\,dy}
+
+
+
+
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\argmin}{argmin}
+\DeclareMathOperator{\essinf}{essinf}
+\DeclareMathOperator{\ext}{ext}
+\def\comma{ {\rm ,\qquad{}} }
+
+
+
+
+\newcommand{\ns}{{\rm ns}}
+\newcommand{\s}{{\rm s}}
+
+%Giacomo's lazyness
+\def \o {{\omega}}
+\def \a {{\alpha}}
+\def \b {{\beta}}
+\def \d {{\delta}}
+\def \l {{\lambda}}
+\def \L {{\Lambda}}
+\def \G {{\Gamma}}
+\def \s {{\sigma}}
+\def \w {{\omega}}
+\def \R {{\mathbb {R}}}
+\def \N {{\mathbb {N}}}
+%\def \C {{\mathbb {C}}}
+\def \Z {{\mathbb {Z}}}
+\def \Y {{\tilde {Y}}}
+\def \x {{\xi}}
+\def \e {{\varepsilon}}
+\def \eps {{\varepsilon}}
+\def \r {{\varrho}}
+\def \u {{\overline{u}}}
+\def \t {{\tau}}
+\def \n {{\nu}}
+\def \m {{\mu}}
+\def \y {{\eta}}
+\def \th {{\theta}}
+\def \z {{\zeta}}
+\def \g {{\gamma}}
+\def \O {{\Omega}}
+\def \phi {{\varphi}}
+\def \v {{\nu}}
+\def \div {{\text{\rm div}}}
+\def \loc {{\text{\rm loc}}}
+\def \tilde {\widetilde}
+\def \Hat {\widehat}
+\def\p{\partial}
+\def \P {{{P}}}
+\def \B {{\cal{B}}}
+\def \rnn {{\mathbb {R}}^{N+1}}
+\def \rdd {{\mathbb {R}}^{d+1}}
+\def \rd {{\mathbb {R}}^{d}}
+\def \k {{\kappa}}
+\def \c {{\chi}}
+\def \o {{\omega}}
+\def \a {{\alpha}}
+\def \b {{\beta}}
+\def \d {{\delta}}
+\def \l {{\lambda}}
+\def \L {{\Lambda}}
+\def \G {{\Gamma}}
+\def \s {{\sigma}}
+\def \w {{\omega}}
+
+
+\def \zz {{\rho}}
+
+
+
+
+
+\numberwithin{equation}{section}
+\numberwithin{theorem}{section}
+
+
+
+
+\title{Applied Math Boot Camp 2024}
+
+
+
+
+
+\begin{document}
+
+
+
+
+\maketitle
+
+
+
+
+
+
+
+%%---  sheet number for theorem counter
+
+\bigskip \section{The natural numbers and induction}
+
+What are the natural numbers anyways?
+
+\begin{axiom}[Peano's Postulates]
+The natural numbers are defined as a set $\mathbb N$ together with a unary 
+``successor" function $S:{\mathbb N}\rightarrow {\mathbb N}$
+and a special element $1\in {\mathbb N}$ satisfying the following postulates:
+
+\begin{tabular}{ll}
+I.  & $1\in {\mathbb N}$.  \\
+
+II. &  If $n\in {\mathbb N}$, then $S(n)\in {\mathbb N}$.  \\
+
+III.  &  There is no $n\in {\mathbb N}$ such that $S(n)=1$.  \\
+
+IV.  &  If $n, m\in {\mathbb N}$ and $S(n)=S(m)$, then $n=m$.  \\
+
+V. &  If $A\subset {\mathbb N}$ is a subset satisfying the two properties: \\
+& \phantom{MMM}  $\bullet$ $1\in A$ \\
+
+& \phantom{MMM} $\bullet$ if $n\in A$, then $S(n)\in A$, \\
+
+& then $A={\mathbb N}$. \\
+\end{tabular}
+\end{axiom}
+
+
+\begin{question}
+Intuitively, what is $S(n)$?
+\end{question}
+
+
+We take the following theorem for granted (we do not want to get into too much logic...).
+\begin{theorem}[Mathematical Induction]  For each $n\in {\mathbb N}$, let $P(n)$ be a proposition. 
+Suppose the following two results:
+\begin{center}
+\begin{tabular}{ll}
+(A) & $P(1)$ is true. \\
+(B) & If $P(n)$ is true, then $P(S(n))$ is true. \\
+\end{tabular}
+\end{center}
+Then $P(n)$ is true for all $n \in {\mathbb N}$.
+\end{theorem}
+
+Statement (A) is called the base case and statement (B) is called the inductive step.  The assumption that $P$ is true of $n$ is called the inductive hypothesis.
+
+
+\begin{remark}
+From now on we assume that all the usual properties of $\N$ and $\Z$ hold. A list of properties will be posted.
+\end{remark}
+
+When you write a proof, you need to clearly declare what the inductive hypothesis is (if it is not obvious from context) and clearly delineate the parts of the proof relating to the base case and inductive step.  Here is an example.
+\begin{proposition}
+	For every $n\in \N$, we have
+	\begin{equation}\label{e.induction1}
+		\sum_{i=0}^n 2^i = 2^{n+1} - 1.
+	\end{equation}
+\end{proposition}
+\begin{proof}
+	We prove this by induction.  For the base case, take $n=0$.  Notice that the left hand side of~\eqref{e.induction1} is
+	\[
+		2^0 = 1,
+	\]
+	while the right hand side is
+	\[
+		2^{0+1} -1 = 2 - 1 = 1.
+	\]
+	These are equal. Thus, the base case is established.
+	
+	We now prove the inductive step. Assume that~\eqref{e.induction1} holds for $n$, and we prove it for $n+1$.  By the inductive hypothesis, we have
+	\[
+		\sum_{i=0}^{n+1} 2^i
+			= 2^{n+1} + \sum_{i=0}^n 2^i
+			= 2^{n+1} + \left(2^{n+1} - 1\right)
+			= 2 \cdot 2^{n+1} - 1
+			= 2^{n+2} - 1.
+	\]
+	The proof is complete.
+\end{proof}
+
+
+
+
+
+
+\begin{exercise}
+	Show that
+	\[
+		\sum_{i=1}^n i^2
+			= \frac{n(2n+1)(n+1)}{6}.
+	\]
+\end{exercise}
+
+
+
+
+
+
+
+
+
+
+
+\bigskip \section{Sets and functions}
+
+
+Sets and functions are among the most fundamental objects in mathematics.  A formal treatment
+of set theory was first undertaken at the end of the 19th Century and was finally codified
+in the form of the Zermelo-Fraenkel axioms.  
+This goes well beyond our purposes here.
+%While fascinating in its own right, pursuit of these formalisms at this point would distract us from our main purpose of studying Calculus.  
+Thus, we present a simplified version.'
+% that will suffice for our immediate purposes.
+
+
+
+
+
+\begin{definition}\label{d.sets}
+A {\em set} is an object $S$ with the property that, given any $x$, we have the dichotomy that precisely
+one of the following two conditions is true: $x\in S$ or $x\not\in S$.  In the former case, we say that $x$ is an 
+{\em element} of $S$, and in the latter, we say that $x$ is not an element of $S$.
+\end{definition}
+
+
+A set is often presented in one of the following forms:
+\begin{itemize}
+\item
+A complete listing of its elements.
+
+Example:  the set $S=\{1,2,3,4,5\}$ contains precisely the 
+five smallest positive integers.
+
+
+\item
+A listing of some of its elements with ellipses to indicate unnamed elements.
+
+Example 1:  the set $S=\{3, 4, 5, \ldots, 100\}$ contains the positive integers from 3 to 100,
+including 6 through 99, even though these latter are not explicitly named.  
+
+
+Example 2:  the set $S=\{2, 4, 6, \ldots, 2n, \ldots \}$ is the set of all positive even integers.
+
+
+\item
+A two-part indication of the elements of the set by first identifying the source of all elements
+and then giving additional conditions for membership in the set.
+
+Example 1: 
+$S=\{x\in {\mathbb N}\mid \mbox{$x$ is prime}\}$ is the set of primes.  
+
+
+Example 2:
+$S=\{x\in {\mathbb Z}\mid \mbox{$x^2<3$}\}$ is the set of integers whose squares are less than 3.
+\end{itemize}
+
+\begin{definition}  
+Two sets $A$ and $B$ are equal if they contain precisely the same elements, that is, $x\in A$
+if and only if $x\in B$.  When $A$ and $B$ are equal, we denote this by $A=B$.
+\end{definition}
+
+\begin{definition}  
+A set $A$ is a {\em subset} of a set $B$ if every element of $A$ is also an element of $B$, that is,
+if $x\in A$, then $x\in B$.  When $A$ is a subset of $B$, we denote this by $A\subset B$.  If $A\subset B$ but $A\neq B$ 
+we say that $A$ is a {\em proper} subset of $B.$ 
+\end{definition}
+
+
+\begin{exercise}
+Let $A=\{1, \{2\}\}$.  Is $1\in A$?  Is $2\in A$?  Is $\{1\}\subset A$?  Is $\{2\}\subset A$?  
+Is $1\subset A$?  Is $\{1\}\in A$?  Is $\{2\}\in A$?  Is $\{\{2\}\}\subset A$?  
+Explain.
+
+\end{exercise}
+
+\begin{proof}
+	Yes, $1\in A$. %\\%\newline
+	No, $2\notin A$. %\newline
+	Yes, $\{1\}\subset A$. 
+	No, $\{2\}\not\subset A$. %\newline
+	No, $1\not\subset A$. %\newline
+	No, $\{1\}\notin A$. %\newline
+	Yes, $\{2\}\in A$. %\newline
+	Yes, $\{\{2\}\}\subset A$ because $\{2\}$ is the only element of $\{\{2\}\}$ and $\{2\}\in A$.
+\end{proof}
+
+\begin{definition}  Let $A$ and $B$ be two sets. 
+The \emph{union} of $A$ and $B$ is the set
+\[
+A \cup B = \{x \mid \text{$x \in A$ or $x \in B$} \}.
+\]
+\end{definition}
+
+\begin{definition}  Let $A$ and $B$ be two sets. 
+The \emph{intersection} of $A$ and $B$ is the set
+\[
+A \cap B = \{ x \mid \text{$x \in A$ and $x \in B$} \}.
+\]
+\end{definition}
+
+\begin{theorem} [No proof required]
+Let $A$ and $B$ be two sets.  Then:
+
+\begin{enumerate} 
+\item[a)]
+$A=B$ if and only if $A\subset B$ and $B\subset A$.
+\item[b)]
+$A\subset A\cup B$.
+
+\item[c)]
+$A\cap B\subset A$.
+\end{enumerate}
+\end{theorem}
+
+A special example of the intersection of two sets is when the two sets have no elements in common.
+This motivates the following definition.
+
+\begin{definition}  
+The \emph{empty set} is the set with no elements, and it is denoted $\emptyset$.  That is,
+no matter what $x$ is, we have $x\not\in \emptyset$.
+\end{definition}  
+
+\begin{definition}  
+Two sets $A$ and $B$ are \emph{disjoint} if $A\cap B=\emptyset$.
+\end{definition}  
+
+\begin{exercise}  
+Show that if $A$ is any set, then $\emptyset\subset A$.
+
+\end{exercise}
+
+\begin{proof}
+	A set $A\not\subset B$ if there exists $x\in A$ where $a\notin B$. Because there is no $x\in \emptyset$ where $x\notin A$, $\emptyset\subset A$.
+\end{proof}
+
+\begin{definition}  
+Let $A$ and $B$ be two sets. 
+The \emph{difference} of $B$ from $A$ is the set
+\[
+A \setminus B = \{ x \in A \mid x \notin B \}.
+\]
+\end{definition}
+
+The set $A \setminus B$ is also called the \emph{complement} of $B$ relative to $A$.
+When the set $A$ is clear from the context, this set is sometimes denoted $B^{c}$, but we will 
+try to avoid this imprecise formulation and use it only with warning.
+
+
+
+\begin{theorem} 
+Let $X$ be a set, and let $A, B\subset X$.  Then:
+\begin{enumerate}
+\item[a)]
+$X\setminus (A\cup B)=(X\setminus A)\cap (X\setminus B)$
+
+\item[b)]
+$X\setminus (A\cap B)=(X\setminus A)\cup (X\setminus B)$
+
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	Start with a proof statement a). Let $x\in X\setminus (A\cup B)$. Then $x\notin A\cup B$, which means that 
+	\[x\in (X\setminus A) \text{ and } x\in (X\setminus B).\] This is the definition of intersection, so
+	\[x\in (X\setminus A)\cap (X\setminus B).\] 
+	Therefore
+	\[X\setminus (A\cup B)\subset (X\setminus A)\cap (X\setminus B).\]
+	
+	To prove equality it will be shown that $X\setminus (A\cup B)=(X\setminus A)\cap (X\setminus B)$. Let $x\in (X\setminus A)\cap (X\setminus B)$. Then 
+	\[x\in(X\setminus A) \text{ and } x\in (X\setminus B).\]
+	This means that $x\notin A$ and $x\notin B$. Therefore, 
+	\[x\notin (A\cup B) \text,\] and so 
+	$$x\in (X\setminus (A\cup B)).$$
+	As a result $$(X\setminus A)\cap (X\setminus B)\subset (X\setminus (A\cup B)).$$ 
+	Combing the forward and reverse statements gives $X\setminus (A\cup B)=(X\setminus A)\cap (X\setminus B)$.
+	
+	What follows is a proof of statement b). Let $x\in X\setminus (A\cap B)$. Then $$x\notin (A\cap B),$$ and by definition of intersection, $$x\notin A \text{ or } x\notin B.$$ Therefore, $$x\in (X\setminus A)\cup (X\setminus B),$$ and $$(X\setminus A\cap B)\subset (X\setminus A)\cup (X\setminus B).$$ 
+	
+	Now it will be shown that the right hand side is a subset of the left hand side. Let $x\in (X\setminus A)\cup (X\setminus B)$. Then $$x\notin A \text{ or } x\notin B.$$ Therefore, $$x\notin (A\cap B)\text{ and } x\in X\setminus (A\cap B).$$ This means that $$(X\setminus A)\cup (X\setminus B)\subset X\setminus (A\cap B).$$ Combing the forward and reverse relations gives $X\setminus A\cap B = (X\setminus A)\cup (X\setminus B)$.
+\end{proof}
+
+Sometimes we will encounter families of sets. The definitions of intersection/union can be extended to infinitely many sets. 
+
+
+\begin{definition}
+
+ Let $\mathcal{A}=\{A_\lambda\mid \lambda\in I\}$ be a collection of sets indexed by a nonempty set $I.$ Then the intersection and union of $\mathcal{A}$ are the sets
+$$\bigcap_{\lambda\in I} A_\lambda =\{x\mid x\in A_\lambda, \text{ for all } \lambda\in I\},$$
+and
+$$\bigcup_{\lambda\in I}A_\lambda =\{x\mid x\in A_\lambda, \text{ for some }\lambda\in I\}.$$
+\end{definition}
+
+Note: unions and intersections should almost never be written in-line because doing so causes spacing issues and is difficult to read.  Please use display environments.
+
+\begin{exercise}
+	Give an example of an indexed family of sets.
+	
+\end{exercise}
+
+\begin{proof}[Example]
+	Let $A_\lambda = \{\lambda\}$, and let $\mathcal{A} = \{A_\lambda\mid \lambda \text{ is prime}\}$
+\end{proof}
+
+\begin{theorem} 
+Let $X$ be a set, and let  $\mathcal{A}=\{A_\lambda\mid \lambda\in I\}$ be a collection of subsets of $X.$ Then:
+\[
+	(1) \ \ X\setminus \left( \bigcup_{\lambda\in I}A_\lambda\right) =\bigcap_{\lambda\in I} (X\setminus A_\lambda)
+	\quad\text{and}\quad
+	(2) \ \ X\setminus \left( \bigcap_{\lambda\in I}A_\lambda\right)  =\bigcup_{\lambda\in I} (X\setminus A_\lambda).
+\]
+\end{theorem}
+
+\begin{proof}
+		
+		Begin with a proof of statement (1). Let $$x\in X\setminus(\bigcup_{\lambda\in I}A_\lambda).$$ This means that $$x\in (X\setminus A_\lambda)\text{ for all } \lambda\in I.$$ This is the definition of the intersection, so $$x\in \bigcap_{\lambda\in I} (X\setminus A_\lambda),$$ and  $$X\setminus \left( \bigcup_{\lambda\in I}A_\lambda\right)\subset \bigcap_{\lambda\in I} (X\setminus A_\lambda).$$ 
+		To show that the right hand side is a subset of the left hand side, let $$x\in \bigcap_{\lambda\in I} (X\setminus A_\lambda).$$ This means that $$x\notin A_\lambda\text{ for all } \lambda\in I,$$ and so $$x\in (X\setminus(\bigcup_{\lambda\in I}A_\lambda))$$ This gives that $$\bigcap_{\lambda\in I} (X\setminus A_\lambda)\subset X\setminus(\bigcup_{\lambda\in I}A_\lambda).$$ Combining the forward and reverse statements gives $$X\setminus \left( \bigcup_{\lambda\in I}A_\lambda\right) =\bigcap_{\lambda\in I} (X\setminus A_\lambda).$$
+		
+		The proof for statement (2) follows. Let $$x\in (X\setminus(\bigcap_{\lambda\in I}A_\lambda))$$ This means that there must exist $$\lambda^\prime\in I \text{ where } x\notin A_{\lambda^\prime}\text{ and } x\in X\setminus A_\lambda^\prime.$$ Therefore, $$x\in\bigcup_{\lambda\in I}(X\setminus A_\lambda), $$and $$X\setminus(\bigcap_{\lambda\in I}A_\lambda)\subset \bigcup_{\lambda\in I}(X\setminus A_\lambda).$$ 
+		To show that the right hand side is a subset of the left hand side, let $$x\in \bigcup_{\lambda\in I}(X\setminus A_\lambda).$$ By definition of union, there must exist $\lambda^\prime\in I$ such that $$x\in X\setminus A_{\lambda^\prime} \text{ or } x\notin A_{\lambda^\prime}.$$ This means that $$x\notin \bigcap_{\lambda\in I}A_\lambda,$$ and $$x\in (X\setminus \bigcap_{\lambda\in I}A_\lambda).$$ Therefore, $$\bigcup_{\lambda\in I}(X\setminus A_\lambda)\subset (X\setminus \bigcap_{\lambda\in I}A_\lambda).$$ Combining the forward and reverse statements gives $$X\setminus(\bigcap_{\lambda\in I}A_\lambda)\subset \bigcup_{\lambda\in I}(X\setminus A_\lambda).$$
+\end{proof}
+
+
+
+\begin{definition}  Let $A$ and $B$ be two nonempty sets. 
+The \emph{Cartesian product} of $A$ and $B$ is the set of ordered pairs
+\[
+A \times B = \{ (a, b) \mid \text{$a \in A$ and $b \in B$} \}.
+\]
+If $(a, b)$ and $(a', b') \in A \times B$, we say that $(a, b)$ and $(a', b')$ are
+\emph{equal} if and only if $a = a'$ and $b = b'$. In this case, we write $
+(a, b) = (a', b').$
+
+
+\end{definition}
+
+
+
+
+\begin{definition} Let $A$ and $B$ be two nonempty sets.  
+A \emph{function} $f$ from $A$ to $B$ is a subset $f \subset A \times B$ such that for all $a \in A$ there exists a unique $b \in B$ satisfying $(a, b) \in f$.  To express the idea that $(a, b) \in f$, we most
+often write $f(a) = b$.  To express that $f$ is a function from $A$ to $B$ in symbols we write $f \colon A \rightarrow B$.  
+\end{definition}
+
+
+\begin{exercise}  
+Let the function $f \colon \N \rightarrow \N$ be defined by
+$f(n)=2n$.  Describe $f$ as a subset of $\N\times \N$ in two ways (see the discussion below \Cref{d.sets}). 
+
+\end{exercise}
+
+\begin{proof}[Solution]
+	The function $f(n)=2n$ can be represented as a set either $f = \{(1,2) ,(2,4), (3,6), ...\}\text{ or } f = \{(n,2n)\mid\text{for all } n\in \N\} $
+	
+\end{proof}
+
+\begin{definition}  Let $f \colon A \rightarrow B$ be a function.  The \emph{domain} of $f$ is $A$ and the \emph{codomain} of $f$ is $B.$\\
+If $X \subset A$, then the \emph{image of $X$ under $f$} is the set
+\[
+f(X) = \{ f(x) \in B \mid  x \in X \}.
+\]
+If $Y \subset B$, then the \emph{preimage of $Y$ under $f$} is the set
+\[
+f^{-1}(Y) = \{ a \in A \mid f(a) \in Y \}.
+\]
+\end{definition}
+
+\begin{exercise}
+Must $f(f^{-1}(Y))=Y$ and $f^{-1}(f(X))=X?$ For each, either prove that it always holds or give a counterexample.
+
+\end{exercise}
+
+\begin{proof}[Counterexample]
+	No, $f(f^{-1}(Y))=Y$ is not always true. Let $f:\N\to\N$ be a function defined as $f(n) = 2n$ and let $Y = \{2,3\}$. Then $$f^{-1}(Y) = \{1\}$$ as there is no $n\in\N$ for which $2n=3$. Taking the image gives $$f(\{1\}) = \{2\},$$ which is different from Y, so The statement $f(f^{-1}(Y))=Y$ does not hold. 
+	
+	No, $f^{-1}(f(X))=X$ is not always true. Let $f:\N\to\N$ be a function defined as $f(n) = 1$ and let $X = \{2,3\}$. Then $$f(X)=\{1\}.$$ However, as $f(n)=1$ for all $n\in\N$, $$f^{-1}(\{1\})= \N.$$ Since  $X\not=\N$, $f^{-1}(f(X))=X$ does not hold. 
+	
+\end{proof}
+
+\begin{definition}  A function $f \colon A \rightarrow B$ is \emph{surjective} (also known as `onto') if, 
+for every $b\in B$, there is some $a\in A$ such that $f(a) = b$.  The function $f$ is \emph{injective} (also known as `one-to-one') if for all $a, a' \in A$, if $f(a) = f(a')$, then $a = a'$.  The function $f$ is \emph{bijective}, (also known as a bijection or a `one-to-one' correspondence) if it is surjective and injective.
+\end{definition}
+
+\begin{exercise}
+Let $f:{\mathbb N}\rightarrow {\mathbb N}$ be defined by $f(n)=n^2$.  Is $f$ injective?  Is $f$ surjective?
+
+\end{exercise}
+
+\begin{proof}[Solution]
+	The function $f$ is injective. Because $f$ is monotonic and increasing, if $$n_1<n_2 \text{ for } n_1,n_2\in\N,$$ then $$(n_1)^2<(n_2)^2.$$ Therefore, if $$(n_1)^2=(n_2)^2,$$ it must be true that $$n_1=n_2.$$ 
+	
+	The function $f$ is not surjective because there exists no $n\in\N$ such that $n^2 = 2$.
+\end{proof}
+
+\begin{exercise}
+Let $f:{\mathbb N}\rightarrow {\mathbb N}$ be defined by $f(n)=n+2$.  Is $f$ injective?  Is $f$ surjective?
+
+\end{exercise}
+
+\begin{proof}[Solution]
+	Yes, $f$ is injective. Because $f$ is monotonic and increasing, if $$n_1<n_2 \text{ for } n_1,n_2\in\N,$$ it follows that $$n_1+2<n_2+2.$$ Therefore, if $$n_1+2=n_2+2,$$ it must be true that $$n_1=n_2.$$ 
+	
+	No, $f$ is not surjective because there exists no $n\in\N$ such that $n+2 = 1$.
+\end{proof}
+
+\begin{exercise}
+Let $f:{\mathbb Z}\rightarrow {\mathbb Z}$ be defined by $f(x)=x^2$.  Is $f$ injective?  Is $f$ surjective?
+
+\end{exercise}
+
+\begin{proof}[Solution]
+	No, $f$ is not injective because $(-1)^2 = 1$ and $1^2=1$. No, $f$ is not surjective because there exists no $z\in\Z$ such that $z^2 = -1$.
+\end{proof}
+
+\begin{exercise}
+Let $f:{\mathbb Z}\rightarrow {\mathbb Z}$ be defined by $f(x)=x+2$.  Is $f$ injective?  Is $f$ surjective?
+
+\end{exercise}
+
+\begin{proof}[Solution]
+	Yes, $f$ is injective. $f$ is monotonic and increasing, so if $$z_1<z_2\text{ for } z_1,z_2\in\Z,$$ then $$z_1+2<z_2+2.$$ Therefore, if $$z_1+2=z_2+2,$$ it follows that $$z_1=z_2.$$ Yes, $f$ is surjective because for all $z_2\in\Z$ there exists $z_1\in\Z$ such that $z_1+2 = z_2$.
+\end{proof}
+
+\begin{definition}
+Let $f:A\longrightarrow B$ and $g:B\longrightarrow C. $ Then the \emph{composition} $g\circ f: A\longrightarrow C$ is defined by $(g\circ f)(x)=g(f(x)),$ for all $x\in A.$ 
+\end{definition}
+
+\begin{proposition}  Let $A$, $B$, and $C$ be sets and suppose that $f:A\longrightarrow B$  and  $g:B\longrightarrow C.$  Then $g\circ f:A\longrightarrow C$ and
+\begin{enumerate}
+\item[a)] if $f$ and $g$ are both injections, so is $g\circ f.$
+
+\item[b)] if $f$ and $g$ are both surjections, so is $g\circ f.$
+
+\item[c)] if $f$ and $g$ are both bijections, so is $g\circ f.$
+
+\item[d)] if $f$ is an injection and $g$ is not, $g\circ f.$ is not injective
+
+\item[e)] if $f$ is not an injection and $g$ is, $g\circ f.$ is not injective
+
+\item[f)] if $f$ is a surjection and $g$ is not, $g\circ f.$ is not surjective
+
+\item[g)] if $f$ is not a surjection and $g$ is, $g\circ f.$ is not surjective
+
+\end{enumerate}
+\end{proposition} 
+
+\begin{proof}
+	What follows is a proof of statement a). Fix any $a_1,a_2\in A$ such that $g(f(a_1)) = g(f(a_2))$. Because $g$ is an injection, $f(a_1) = f(a_2)$, and because $f$ is also an injection, $a_1 = a_2$. Therefore, $g(f(a_1)) = g(f(a_2))$ gives $a_1 = a_2$, and $g\circ f$ is an injection.
+
+	What follows is a proof of statement b).Given that $g$ is a surjection, for any $c\in C$, there must exist $b\in B$, such that $g(b) = c$. Similarly, because $f$ is a surjection, for all $b\in B$, there must $a\in A$, such that $f(a) = b$. Therefore, for all $c\in C$ we can rewrite $g(b) = c$ as $g(f(a)) = c$, and $g\circ f$ must also be a surjection.
+
+	What follows is a proof of statement c). If $f$ and $g$ are both bijections, they are both injections and surjections. By parts (a) and (b), $g\circ f$ must also be both an injection and surjection, and is therefore a bijection.
+
+	To show d) is true, let $f:\N\to\N$ such that $f(x)=x$ for all $x\in\N$, and let $g:\N\to\N$ such that $g(y)=1$ for all $y\in\N$. Then 
+	\[
+	\begin{split}
+		g(f(1)) &= g(1)
+		\\
+		&= 1.
+	\end{split}		
+	\]
+	Also,  
+	\[\begin{split}
+		g(f(2)) &= g(2)\\
+		&= 1.
+	\end{split}\]
+	Thus $g(f(1))=g(f(2))$, and $g\circ f$ is not an injection.
+
+	To show e) is true, let $f:\N\to\N$ such that $f(x)=1$ for all $x\in\N$, and let $g:\N\to\N$ such that $g(y)=y$ for all $y\in\N$. Then
+	\[
+	\begin{split}
+		g(f(1)) &= g(1)
+		\\
+		&= 1.
+	\end{split}		
+	\]
+	Also,  
+	\[\begin{split}
+		g(f(2)) &= g(1)\\
+		&= 1.
+	\end{split}\]
+	Thus $g(f(1))=g(f(2))$, and $g\circ f$ is not an injection.
+
+	To show that f) is true, let $f:\N\to\N$ such that $f(x)=2x$ for all $x\in\N$, and let $g:\N\to\N$ such that $g(y)=y$ for all $y\in\N$. $3$ is in the codomain of $g$, and has representation $g(3) = 3$. $3$ is also in the codomain of $f$, but there exists no $x\in\N$ such that $2x = 3$, and by extension there exists no $x\in\N$ such that $(g\circ f)(x) = 3$. Therefore, $g\circ f$ is not a surjection.
+
+	To show that g) is true, let $g:\N\to\N$ such that $g(y)=2y$ for all $y\in\N$. $3$ is in the codomain of $g$, but there exists no $y\in\N$ such that $2y = 3$. Therefore, no matter what $f:A\to\N$ is, $g\circ f$ is not a surjection.
+\end{proof}
+
+\begin{proposition} 
+Suppose that $f \colon A \rightarrow B$ is bijective.  
+Then there exists a bijection $g \colon B \rightarrow A$ that satisfies $(g\circ f)(a)=a$ for all $a\in A$, and $(f\circ g)(b)=b,$ for all $b\in B.$ 
+The function $g$ is often called the \emph{inverse} of $f$ and  denoted $f^{-1}$. It should not be confused with the preimage. 
+
+\end{proposition}
+
+\begin{proof}
+	Define $g:B\to A$ as follows. Fix $b\in B$. By the bijectivity of $f$, there exists a unique $a\in A$ such that $f(a_b)=b$. Let $g(b) = a_b$. Applying $f$ to both sides of the definition for $g$ gives
+	\[
+	\begin{split}
+		f(g(b))&=f(a_b)\\
+		&=b.
+	\end{split}
+	\]
+	
+	Similarly, applying our definition of $g$ to the equation of $f(a_b)= b$ gives
+	\[\begin{split}
+		g(f(a_b))&=g(b)\\
+		&=a_b.
+	\end{split}\]
+	
+	To show that $g$ is an injection, fix $b_1,b_2\in B$, and set $g(b_1) = g(b_2)$. Applying $f$ gives
+	\[\begin{split}
+		f(g(b_1))&=f(g(b_2))\\
+		b_1&=b_2.
+	\end{split}\]
+	This satisfies the definition of an injection. To show that $g$ must be a surjection, assume for contradiction that $g$ is not a surjection. That would mean that for all $b\in B$, there exists $a\in A$, such that $g(b)\not=a$ . Applying $f$ to both sides gives
+	\[\begin{split}
+		f(g(b))&\not=f(a)\\
+		b&\not=f(a).
+	\end{split}\]
+	This contradicts $f$ as a bijection, so $g$ must be a surjection, and therefore a bijection as well.
+	
+\end{proof}
+
+
+\begin{definition}
+We say that two sets $A$ and $B$ are in \emph{bijective correspondence} when there exists a bijection from $A$ to $B$ or, equivalently, from $B$ to $A$.
+\end{definition}
+
+
+
+
+
+
+
+
+
+\bigskip \section{Building the real numbers}
+
+
+This sheet introduces a continuum $C$ through a series of axioms.  We will construct such an object in a bit.
+
+
+
+\begin{axiom} A continuum is a nonempty set $C$.  
+\end{axiom}
+
+We often refer to elements of $C$ as \emph{points}.
+
+
+\begin{definition}  Let $X$ be a set.  An \emph{ordering} on the set $X$ is a subset $<$ of $X \times X$, with elements $(x, y) \in <$ written as $x < y$, satisfying the following properties:
+	
+	\begin{itemize}
+		\item[(a)] {\it (Trichotomy) }
+		For all $x, y \in X$ exactly one of the following holds:
+		$x < y,\  y < x\   \text{or } x=y.$ 
+		
+		\item[(b)] {\it (Transitivity)} For all $x, y, z \in X$, if $x < y$ and $y < z$ then $x < z$.
+	\end{itemize}
+\end{definition}
+
+
+\begin{remark}
+	\begin{enumerate}
+		\item[a)]  In mathematics ``or'' is understood to be inclusive unless stated otherwise. So in a) above, the word ``exactly'' is needed.
+		\item[b)] $x<y$ may also be written as $y>x.$
+		\item[c)] By $x \leq y$, we mean $x < y$ or $x = y$;  similarly for $x \geq y$.
+	\end{enumerate}
+\end{remark}
+
+
+\begin{axiom}  A continuum $C$ has an ordering $<$.
+\end{axiom}
+
+
+
+\begin{definition}  If $A \subset C$ is a subset of $C$, then a point $a \in A$ is a \emph{first} point of $A$ if, for every element $x \in A$, either $a < x$ or $a = x$.  Similarly, a point $b \in A$ is called a \emph{last} point of $A$ if, for every $x \in A$, either $x < b$ or $x = b$.
+\end{definition}
+
+
+
+\begin{definition}
+	A set $A$ is finite if $A= \emptyset$ or if there exists $n\in\N$ and a bijection $f: A \to \{1,2,\dots, n\}$.  In the former case, we say that $A$ has no elements, and in the latter case, we say that $A$ has $n$ elements.
+\end{definition}
+
+\begin{lemma}
+	Fix $n\in \N$.  Suppose that $A$ has $n+1$ elements and that $a\in A$.  Then $A\setminus\{a\}$ has $n$ elements.
+\end{lemma}
+
+\begin{proof}
+	
+	Let $f:\{2,3,\dots\}\to\N$ be a function defined as $f(n)=n-1$. This function is monotonic and increasing, so if $$n_1<n_2,$$ it must be true that $$n_1-1<n_2-1.$$ This implies that if $$f(n_1)=f(n_2),$$ then $$n_1=n_2,$$ and $f$ must be an injection. 
+	
+	The function $f$ must also be a surjection because for all $m\in\N$, there exists $n\in\{2,3,\dots\}$ such that $n-1=m$. 
+	
+	This subtraction by one function must be a bijection, and therefore for any $n\in\N$ and set $A$ with $n+1$ elements, $A\setminus\{a\}$ with $a\in A$, has $n$ elements.
+\end{proof}
+
+\begin{lemma}  If $A$ is a nonempty, finite subset of a continuum $C$, then $A$ has a first and last point.
+\end{lemma}
+
+\begin{proof}
+	What follows is a proof by induction on a set with $n$ elements. The base case is the set which only has $1$ element. This element is both the first and last point of the set. 
+	
+	The induction hypothesis is that any set with $n$ elements, where $n\in\N$, has a first point and last point. Consider a set $A$ with $n+1$ elements. Now define a new set $$A^\prime=A\setminus\{a\}\text{, where } a\in A.$$ By Lemma 3.7, $A^\prime$ has $n$ elements, and by the induction hypothesis has a first point $a_f\in A^\prime$ and last point $a_f\in A^\prime$. 
+
+	If $a< a_f$, then $a$ is the first point of $A$. Similarly, if $a> a_l$, then $a$ is the last point of $A$. Otherwise, the $a_f$ and $a_l$ values for $A\setminus \{a\}$ are the $a_f$ and $a_l$ values for $A$. 
+	
+	Therefore, by induction, every set with $n+1$ elements has a first and last point.
+\end{proof}
+
+\begin{theorem}  Suppose that $A$ is a set of $n$ distinct points in a continuum $C$, or, in other words, $A \subset C$ has cardinality $n$.  Then symbols $a_1, \dotsc, a_n$ may be assigned to each point of $A$ so that $a_1 < a_2 < \dotsm < a_n$, i.e. $a_i < a_{i + 1}$ for $1 \leq i \leq n - 1$.
+\end{theorem}
+
+\begin{proof}
+	What follows is a proof by induction on a set with $n$ elements. The base case is the set that only has $1$ element. This one element is ordered and can be designated $a_1$. 
+	
+	The induction hypothesis is that any set with $n$ elements, where $n\in\N$, has symbols $a_1, \dotsc, a_n$ that may be assigned to each point of $A$ so that $a_1 < a_2 < \dotsm < a_n$. Consider a set $A$ with $n+1$ elements. By Lemma 3.8, $A$ has a last element $a_l\in A$. Define $$A^\prime=A\setminus\{a_l\}.$$ Since each element is distinct, for all $a\in A$, $a_l>a$. Therefore, for all $a^\prime\in A^\prime$, $a_l>a^\prime$ as well. 
+	
+	Seeing as $A^\prime$ has $n$ elements, by the induction hypothesis its elements have an ordering from least to greatest, terminating at $a_n$. $A$ has the same ordering as $A^\prime$ but with $a_l = a_{n+1}$. 
+	
+	Therefore, by induction, any set with $n$ elements can have its elements labeled and ordered from least to greatest.
+\end{proof}
+
+\begin{definition}  If $x, y, z \in C$ and either (i) both $x < y$ and $y < z$ or (ii) both $z<y$ and $y<x,$ then we say that $y$ is \emph{between} $x$ and $z$.
+\end{definition}
+
+\begin{corollary}  Of three distinct points in a continuum, one must be between the other two.
+\end{corollary}
+
+\begin{proof}
+	Let $A = \{x,y,z\}$ where $x, y, z \in C$ and are distinct. Then $A$ is a finite subset of $C$ and has a first and last element. Because of the choice of $x,y\text{, and }z$ is arbitrary, we can set $x$ as the first point and $z$ as the last point without the loss of generality. By definition 3.10, this must mean that $x < y$ and $y < z$, and can therefore state that $y$ is between $x$ and $z$. 
+\end{proof}
+
+\begin{axiom} A continuum $C$ has no first or last point.
+\end{axiom}
+
+\begin{definition} If $a,b\in C$ and $a < b$, then the set of points between $a$ and $b$ is called an \emph{interval}, denoted by $(a,b)$.  
+\end{definition}
+
+
+
+\begin{theorem}
+	If $x$ is a point of a continuum $C$, then there exists an interval $(a,b)$ such that $x \in (a,b)$.
+\end{theorem}
+
+\begin{proof}
+	Because $x\in C$ and $C$ is a continuum, by Axiom 3.12, it is always possible to find $a,b\in C$ such that $a<x$ and $x<b$. By definition 3.10, $x$ is between $a$ and $b$, and by definition 3.13, $(a,b)$ constitutes an interval. Therefore, $x\in (a,b)$.
+\end{proof}
+
+\begin{definition}
+	Let $A$ be a subset of a continuum $C$.  A point $p$ of $C$ is called a \emph{limit point} of $A$ if every interval $I$ containing $p$ has nonempty intersection with $A \setminus \{p\}$.  Explicitly, this means:
+	\[
+	\text{for every interval $I$ with $p \in I$, we have $I \cap (A \setminus \{p \}) \neq \emptyset$.}
+	\]
+\end{definition}
+
+Notice that we do not require that a limit point $p$ of $A$ be an element of $A$. We will use the notation $LP(A)$ to denote the set of limit points of $A.$ 
+
+\begin{theorem} If $p$ is a limit point of $A$ and $A \subset B$, then $p$ is a limit point of $B$.
+\end{theorem}
+
+\begin{proof}
+	Let $I$ be any interval such that $p\in I$. Since $p$ is a limit point of set A, $I \cap (A \setminus \{p \}) \neq \emptyset$. Let $x\in I \cap (A \setminus \{p \})$, so $x\in I$ and $x\in A \setminus \{p\}$. Because $A\subset B$, $A\setminus \{p\}\subset B\setminus\{p\}$, and $x\in B\setminus \{p\}$. Therefore $x\in I \cap (B \setminus \{p \})$ and $x$ must be a limit point of $B$.
+	%Since $\{p\}$ is a limit point of $A$, $I \cap (A \setminus \{p \}) \neq \emptyset$, for any interval $I$ containing $p$. Because $A\subset B$, $A\setminus \{p\}\subset B\setminus\{p\}$, and $I \cap (A \setminus \{p \})\subset I\cap (B\setminus \{p \})$. Since $I \cap (A \setminus \{p \}) \neq \emptyset$, it must be true that $I \cap (B \setminus \{p \}) \neq \emptyset$, and therefore $p$ is a limit point of $B$.
+\end{proof}
+
+
+\begin{definition}
+	If $(a,b)$ is an interval in a continuum $C$, then $C \setminus (\{a\} \cup (a,b) \cup \{b\})$ is called the \emph{exterior} of $(a,b)$ and is denoted by $\ext{(a,b)}$.
+\end{definition}
+
+
+\begin{lemma}
+	If $(a,b)$ is an interval in a continuum $C,$ then
+	\[
+	\ext{(a,b)}=\{x\in C\mid x<a\}\cup\{x\in C\mid b<x\}.
+	\]
+\end{lemma}
+
+\begin{proof}
+	Let $x\in \ext{(a,b)}$. By definition 3.17, $x\notin (a,b)$, and by definition 3.13, is not between $a$ and $b$. Therefore, $x\leq a$ or $x\geq b$. However $a,b\notin \ext{(a,b)}$, so $x<a$ or $x>b$. This as a set gives $\ext{(a,b)}=\{x\in C\mid x<a\}\cup\{x\in C\mid b<x\}$.
+\end{proof}
+
+\begin{lemma}  No point in the exterior of an interval is a limit point of that interval.  No point of an interval is a limit point of the exterior of that interval.
+\end{lemma}
+
+\begin{proof}
+	Let $p\in \ext{(a,b)}$. By lemma 3.18, either $p<a$ or $p>b$. 
+	
+	Consider just the case that $p<a$. Because $\ext{(a,b)}$ is a subset of a continuum $C$, by axiom 3.12, there must be $x\in C$ such that $x<p$. By definition 3.10, $p$ is between $x$ and $a$, and $p\in (x,a)$ by definition 3.13. However, the intersection $(x,a)\cap (a,b)=\emptyset$, so by definition 3.15, $p$ cannot be a limit point of $(a,b)$. 
+	
+	The justification is very similar for the case where $p>b$, as there must now exist $x\in C$ such that $x>p$. Thus $p\in(b,x)$, and $(b,x)\cap (a,b)=\emptyset$. Therefore, no point of the exterior of an interval can be a limit point of the interval. 
+	
+	To show that no point of an interval can be a limit point of the exterior of that interval, let $p\in (a,b)$, and by definition of the exterior, $\ext{(a,b)}\cup (a,b) = \emptyset$. This proves the statement.
+\end{proof}
+
+\begin{theorem}
+	If two intervals have a point $x$ in common, their intersection is an interval containing $x$.
+\end{theorem}
+
+\begin{proof}
+	Let $(a,b),(c,d)\subset C$ with $x\in (a,b)$ and $x\in (c,d)$. This is the definition of the intersection and $x\in (a,b)\cap (c,d)$. By definition 3.10, $x>a$, $x<b$, $x>c$, $x<d$. Let the function $\max(x,y)$ for $x,y\in C$ be defined as
+	\[\max(x,y) = \begin{cases}
+		x \quad &\text{if } x>y \text{ or } x =y,\\
+		y \quad &\text{if } x<y,\\
+	\end{cases}\]
+	Similarly, let the function $\min(x,y)$ for $x,y\in C$ be defined as 
+	\[\min(x,y) = \begin{cases}
+		x \quad &\text{if } x<y \text{ or } x =y,\\
+		y \quad &\text{if } x>y,\\
+	\end{cases}\]
+	Since $x>a$ and $x>c$, it must be true that $x>\max(a,c)$. Similarly, as $x<b$ and $x<d$, $x<\min(b,d)$. By definition 3.10, x is between $\max(a,c)$ and $\min(b,d)$, and by definition 3.13, the set of all possible values for $x$ describe the interval $(\max(a,c),\min(b,d))$.
+\end{proof}
+
+\begin{corollary}\label{c.interval_intersection}
+	If $n$ intervals $I_1, \dotsc, I_n$ have a point $x$ in common, then their intersection $I_1 \cap \dotsm \cap I_n$ is an interval containing $x$.
+\end{corollary}
+	
+\begin{proof}
+	This will be proven by induction on the set of intervals $I_n$ all containing $x$. Let $I_1$ be one of those intervals. Because every interval contains $x$, $x\in I_1$. 
+	%$$\bigcap_{i=1}^n I_i$
+	
+	The induction hypothesis is that the intersection of $n$ intervals which all contain $x$, is itself an interval that contains $x$. Let $I_1, \dotsc, I_n$  where $x\in I_n$ for all $n$. Then the intersection, 
+	$$I_{n+1} \cap \bigcap_{i=1}^n I_i = \bigcap_{i=1}^{n+1} I_i$$ is the intersection of two intervals, both of which contain $x$. By theorem 3.20, the intersection $$\bigcap_{i=1}^{n+1} I_i$$ is also an interval that contains $x$. 
+	
+	Therefore, by induction, the intersection of any number of intervals containing a point $x$ must also be an interval that contains $x$.
+\end{proof}
+
+\begin{exercise}
+	Is \Cref{c.interval_intersection} true for {\em infinite} intersections of intervals?
+\end{exercise}
+
+\begin{proof}[Counterexample]
+	Consider the set of nested intervals $I_n = (x-1/n,x+1/n)$ where $x\in\R$ and $n\in\N$. Every set contains $x$. Consider any point $x+a$ where $a\in\R$. Because $\N$ is unbounded, for any choice of $a$, it must be true that there exists $n\in\N$ such that $1/n<|a|$. Therefore, for any choice of $a$, there must exist $I_n$ such that $x+a\notin I_n$. Therefore, the infinite intersection of these intervals must not contain anything other than x, and as such, cannot be an interval. 
+\end{proof}
+
+\begin{theorem}  Let $A, B$ be subsets of a continuum $C$.  Then $p$ is a limit point of $A \cup B$ if, and only if, $p$ is a limit point of at least one of $A$ or $B$.
+\end{theorem}
+
+\begin{proof}
+	Let $p$ be a limit point of $A$. By theorem 2.7, $A\subset A\cap B$, and by theorem 3.16, $p$ is a limit point of $A\cap B$. By the same reasoning, if $p$ is limit point of $B$, then $p$ is a limit point of $A\cap B$. 
+	
+	The reverse implication will be proven using the contrapositive, which states that if $p$ is not a limit point of both $B$ and $A$, then it is not a limit point of $A\cup B$. Since $p$ is not a limit point of $A$ and $B$, there must exist intervals $I_1,I_2\in C$ such that $$p\in I_1,I_2 \text{, } I_1 \cap (A\setminus \{p\}) =\emptyset \text{, and } I_2 \cap (B\setminus \{p\}) =\emptyset.$$ Since $I_1$ and $I_2$ both contain $p$, by theorem 3.20, there must exist an interval $I_3$ such that $I_3 = I_1 \cap I_2$ and $p\in I_3$. By theorem 2.7, $I_3 \subset I_1$ and $I_3 \subset I_2$, so $$I_3 \cap (A\setminus \{p\}) =\emptyset \text{ and } I_3 \cap (B\setminus \{p\}) =\emptyset.$$ Therefore, it must be true that $I_3 \cap ((A\cup B)\setminus \{p\}) =\emptyset$.
+\end{proof}
+	
+\begin{corollary}
+	Let $A_1, \dotsc, A_n$ be $n$ subsets of a continuum $C$.  Then $p$ is a limit point of $A_1 \cup \dotsm \cup A_n$ if, and only if, $p$ is a limit point of at least one of the sets $A_k$.
+\end{corollary}
+
+\begin{proof}
+	Let $p$ be a limit point of some set $A_m\in\{A_1, \dotsc, A_n\}$. Since $$A_m\subset \bigcup_{i=1}^n A_i,$$ by theorem 3.16, $$p \text{ is a limit point of } of \bigcup_{i=1}^n A_i.$$ The reverse implication will be proven by the contrapositive and induction on the union of the sets $A_n$. The contrapositive of this statement is that if $p$ is not a limit point of every set $A_m\in\{A_1, \dotsc, A_n\}$, then $p$ is not a limit point of $$\bigcup_{i=1}^n A_i.$$ The base case is for when there is one set $A_1$ and $p$ is not the limit point of $A_1$.
+	The induction hypothesis is that the union of $n-1$ sets for which $p$ is not a limit point of any individual set, does not have $p$ as its limit point. Let $$\bigcup_{i=1}^{n-1} A_i$$ be the union of $n-1$ sets $A_i$, and that $p$ is not a limit point for each set $A_i$. Let $A_n$ be a set for which $p$ is not a limit point. By the induction hypothesis, $p$ is not a limit point of $\bigcup_{i=1}^{n-1} A_i$, and since $p$ is not a limit point of $A_n$, $\bigcup_{i=1}^{n-1} A_i \cup A_{n} = \bigcup_{i=1}^n A_i$ does not have $p$ as its limit point by theorem 3.23. Therefore, by induction, if $p$ is not a limit point of each set $A_m\in\{A_1, \dotsc, A_n\}$ it is not a limit point of $\bigcup_{i=1}^{n} A_i$.
+\end{proof}	
+
+\begin{theorem}  If $p$ and $q$ are distinct points of a continuum $C$, then there exist disjoint intervals $I$ and~$J$ containing $p$ and $q$, respectively.
+\end{theorem}
+
+\begin{proof}
+	There are two cases that need to be proven separately: the case in which there exists a distinct element $x\in C$ that is between $p$ and $q$, and the case in which there does not. Let $p<q$ and thereby the interval $(p,q)$ exists. Consider first the case in which there exists $x\in (p,q)$. By definition 3.10, $x<q$ and $x>p$. Being part of a continuum, by axiom 3.12, there must exist $a,b\in C$ such that $a<p$ and $q<b$. Since $a<p$ and $p<x$, there exists an interval $(a,x)$ with $p\in (a,x)$. Similarly, since $x<q$ and $q<b$, there exists an interval $(x,b)$ with $q\in (x,b)$. As a result, $(a,x) \cap (x,b) = \emptyset$, which proves the result for the nonempty case. Now consider the case in which there exists no $x\in C$ such that $x\in (p,q)$. Define $a,b\in C$ the same as in the first case. Since $a<p$ and
+	$p<q$, there exists interval $(a,q)$ with $p\in (a,q)$. Similarly, since $p<q$ and
+	$q<b$, there exists interval $(p,b)$ with $q\in (p,b)$. The intersection $(a,q)\cap (p,b) = (p,q)$, but we defined this set to be empty, so $(a,q)\cap (p,b) = \emptyset$, thereby proving the result for this case.
+\end{proof}
+
+\begin{corollary}  A subset of a continuum $C$ consisting of one point has no limit points.
+\end{corollary}
+
+\begin{proof}
+	Let $A$ be a subset of continuum $C$ with only one element.  Consider the possibility that the single element $p\in A$ is the limit point. Then, no matter the choice of $I$ with $p\in I$, $I\cap (A\setminus\{p\}) = \emptyset$. Now consider any point $p\notin A$ as a potential limit point of $A$. Let $a\in A$. Since $a$ and $p$ are distinct, by theorem 3.25, there must exist disjoint intervals $I_1$ and $I_2$ such that $a\in I_1$ and $p\in I_2$. Since $A\setminus\{p\}\subset A$, and because $A$ only has one element which is contained in $I_1$, $A\setminus\{p\}\subset A\subset I_1$. Because $I_1$ and $I_2$ are disjoint, $A\setminus\{p\}\cap I_2 = \emptyset$, and since $p\in I_2$, $p$ cannot be a limit point of $A$.
+\end{proof}
+
+\begin{theorem} A finite subset $A$ of a continuum $C$ has no limit points.
+\end{theorem}
+
+\begin{proof}]
+	This will be proven by induction on a set $A$ with $n$ elements. The base case is the case in which $A$ only has one element, and corollary 3.26 ensure that this set cannot have a limit point. The induction hypothesis is that any set with $n$ elements does not have any limit points. Let $A$ have $n+1$ elements. By theorem 3.9, each element of A can be assigned a symbol $a_1, \dotsc, a_{n+1}$. The set $A$ can be rewritten as $A\setminus\{a_{n+1}\}\cup \{a_{n+1}\}$, where $A\setminus\{a_{n+1}\}$ has $n$ elements by lemma 3.7. By the induction hypothesis $A\setminus\{a_{n+1}\}$ cannot have any limit points, and since $\{a_{n+1}\}$ cannot have any limit points by corollary 3.26, by theorem 3.23, $(A\setminus\{a_{n+1}\})\cup \{a_{n+1}\}$ cannot have any limit points either. Therefore, by induction, no finite set can have limit points.
+\end{proof}
+
+\begin{corollary}  If $A$ is a finite subset of a continuum $C$ and $x \in A$, then there exists an interval $R,$ containing $x,$ such that $A \cap R = \{ x \}$.
+\end{corollary}
+
+\begin{proof}
+	Consider any point $x\in A$ and some interval $I$ such that $x\in I$. By the definition of intersection, $x\in I\cap A$. Since $A$ is finite, by theorem 3.28, it must not have any limit points. By definition 3.15, this means that $I\cap A\setminus\{x\} =\emptyset$. For $I\cap A\setminus\{x\} =\emptyset$ to be true, there must be no other element $y\in C$ such that $y\in I$, $y\in A$, and $y\not=x$. It therefore must be true that $I\cap A = \{x\}$.
+\end{proof}
+
+\begin{theorem}  If $p$ is a limit point of $A$ and $I$ is an interval containing $p$, then the set $I \cap A$ is infinite.
+\end{theorem}
+
+\begin{proof}
+	The set $A$ can be rewritten as $A = (A\cap I) \cup (A\setminus I)$. It must be true that $I\cap (A\setminus I) = \emptyset$, and since $p\in I$, $p$ cannot be a limit point of $A\setminus I$. By theorem 3.23, $p$ must be a limit point of $(A\cap I)$, and therefore by theorem 3.27, cannot be finite.
+\end{proof}
+
+\subsection{Building a continuum: defining $\R$}
+
+We take it for granted that we have the rational numbers:
+\[
+\Q = \{ \sfrac{a}{b}: a \in \Z, b \in \N\}.
+\]
+This inherits an ordering from the one on $\Z$:
+\[
+\frac{a}{b} < \frac{c}{d}
+\qquad\text{ if and only if }\qquad
+ad < bc.
+\]
+\begin{definition}
+	A (Dedekind) cut is a set $A \subset \Q$ such that
+	\begin{enumerate}[(i)]
+		
+		\item $A \neq \Q,\emptyset$;
+		
+		\item there is no largest point: if $a \in A$, there is a point $a' \in A$ such that $a < a'$;
+		
+		\item if $a\in A$ and $b \in \Q$ satisfies $b<a$, then $b \in A$.
+		
+	\end{enumerate}
+	Let us denote $\R$ to be the set of cuts.
+\end{definition}
+
+It may seem strange that we are defining $\R$ here.  Surely, we already know what it is!?  Actually, the more you think about it, the more you will have trouble pinning down an actual definition of the real numbers.  This is one approach to it (the other one is related to taking the ``completion'' of a metric space, which we discuss during the semester).  As you go through these exercises, you may find it interesting to think about how real numbers that you ``know,'' like $\sqrt 2$ and $\pi$, could be defined using cuts.
+
+
+\begin{theorem}
+	For any $A, B\in \R$, we define $<$ by
+	\[
+	A \prec B
+	\qquad\text{ if and only if }
+	A \subsetneq B.
+	\]
+	Show that $\prec$ is an ordering on $\R$.
+\end{theorem}
+
+\begin{proof}
+	Let $A,B \in\R$ be any cuts. If there exists $b\in B$ such that for all $a\in A$ $a<b$, then by definition 3.30 part (iii), $a\in B$. So for all $a\in A$, $a\in B$, which means $A\subset B$ or $A\prec B$. Without the loss of generality, it is similarly possible to show that $B\subset A$ or $B\prec A$. 
+	
+	If it is simultaneously true that for any choice $a\in A$ there exists $b\in B$ such that $a<b$ and that for any choice of $b^\prime\in B$ there exists $a^\prime\in A$ such that $a^\prime>b^\prime$, then by definition 3.30 part (iii) any element of $A$ is also in $B$ and any element of $B$ is also in $A$. These cuts must therefore be equal.
+	
+	Together, this shows $\prec $ satisfies definition 3.2 (a). 
+	
+	Let $A,B,C\in\R$ be cuts with $A<B$ and $B<C$. Therefore, $A\subset B$ and $B\subset C$, and $A\subset C$ as a result, thereby satisfying definition 3.2 (b). Because $<$ contains all properties of an ordering, $<$ is an ordering on $\R$.
+\end{proof}
+
+\begin{definition}
+	If a cut $C_a$ has the form
+	\[
+	C_a = \{b \in \Q: b < a\}
+	\]
+	for some $a\in \Q$, we call $C_a$ a {\em rational cut}.  Let $C_\Q$ be the set of all rational cuts.
+\end{definition}
+
+
+
+\begin{lemma}
+	Given $a\in \Q$, show that $C_a$ is a cut; that is, $C_a \in \R$.
+\end{lemma}
+
+\begin{proof}
+	Let $b,c\in\Q$ with $b<a$ and $c>a$. Then by Definition 3.32, $b\in C_a$ while $c\notin C_a$, so $C_a$ is nonempty and not all of $\Q$. This satisfies Definition 3.30 part (i) of a cut.
+	
+	Using the same $b$ defined above, define $a^\prime = (b+a)/2$. Then, $a^\prime\in\Q$ and must be between $b$ and $a$. Since the choice of $b$ was arbitrary, it is always possible to find a larger value in $C_a$, thus $C_a$ satisfies Definition 3.30 (ii).
+	
+	Again using the same $b$ defined above, define $d\in\Q$ such that $d<b$. Since $d<b$ and $b<a$, $d<a$ and by definition of $C_a$, $d\in C_a$. Therefore, $C_a$ satisfies definition 3.30 (iii).
+	
+	Since $C_a$ satisfies all properties of a cut, $C_a$ must be a cut. 
+\end{proof}
+
+
+\begin{theorem}
+	Show that $\R$ is nonempty and has no first or last point.
+\end{theorem}
+
+\begin{proof}
+	Fix $a\in\Q$. By Lemma 3.32, for any $q\in\Q$, $C_q$ must exist, so $C_a$ must exist. Therefore $\R$ is nonempty.
+	
+	To show that $\R$ has no first point, assume for contradiction that it does have first point or first cut. Let this cut be defined as $C_f\in\R$. Since $C_f$ must be nonempty, there must exist some point $p\in C_f$ where $p\in \Q$. Since $p\in \Q$, by Lemma 3.33, we can form a rational cut $C_p$. Seeing as every $x\in C_p$ must be less than $p$, and $p\in C_f$, every $x\in C_f$ as well. Since $C_f$ has no largest point, there must also exist $q\in C_f$ where $p<q$, and $q\notin C_p$. Therefore, $C_p \prec C_f$, contradicting that $C_f$ is the first cut of $\R$, so $\R$ must not have a first point.
+	
+	To show that $\R$ has no last point, assume for contradiction that it does have a last point or last cut. Let this cut be defined as $C_l\in\R$. Since no cut can be all of $\Q$, $\Q\setminus C_l$ is nonempty. Let $d\in \Q\setminus C_l$. 
+\end{proof}
+
+\begin{exercise}
+	Show that
+	\[
+	\{ C \in \R : C \text{ is a rational cut } \}
+	\subsetneq \R.
+	\]
+	Think about how the set on the left hand side is a ``copy'' of $\Q$.  More formally, find $\phi: \Q \to C_\Q$ that is bijective, increasing (that is, $\phi(a_1) \prec \phi(a_2)$ if $a_1 < a_2$), and that $C_\Q \neq \R$.
+\end{exercise}
+
+\begin{proof}[Solution]
+	
+	To show that $\{C\in\R: C \text{ is a rational cut}\}\subsetneq \R$, I claim that $C_{\sqrt{2}} = \{x\in\Q: x<0 \text{ or } x^2<2\}$ is a cut which is distinct from any rational cut.
+	
+	Consider $-1,2\in\Q$. Since $-1<0$, $-1\in C_{\sqrt{2}}$, and $2^2 > 2$ so $2\notin C_{\sqrt{2}}$. Therefore, $C_{\sqrt{2}}$ is nonempty and not all of $\Q$, satisfying Definition 3.30 (i).
+	
+	Consider any $a\in\Q$ and $a<0$ or $a^2<2$. From our definition of $C_{\sqrt{2}}$, $a\in C_{\sqrt{2}}$. Since $\Q$ is unbounded, there must always exist $b\in\Q$ such that $b<a$. Therefore, either $b<0$ or $b^2<2$ so $b\in C_{\sqrt{2}}$, which satisfies Definition 3.30 (iii).
+	
+	To show that there is no largest element of $C_{\sqrt{2}}$, let $a\in C_{\sqrt{2}}$. Consider $(a+1/n)$ where $n$ is some $n\in\N$. Squaring gives
+	\[\begin{split}
+		(a+1/n)^2 &= a^2 + 2a/n + 1/n^2\\
+				&<a^2 + 2a/n + 1/n\\
+				&=a^2 + (2a+1)/n
+	\end{split}\]
+	I claim that there must exist $n_0\in\N$ such that $a^2 + (2a+1)/n_0 < 2$. Rearranging this equality gives $$(2a+1)/(2-a^2) < n_0.$$ This $n_0$ must exist as $2-a^2 > 0$ and $\N$ is unbounded. 
+	
+	Since $$a^2 + (2a+1)/n_0 < 2,$$ and 
+	\[\begin{split}
+		(a+1/n_0)^2 &< a^2 + (2a+1)/n_0\\
+		(a+1/n_0)^2 &< 2.
+	\end{split}\]
+	Therefore, there is no largest element of $C_{\sqrt{2}}$, which satisfies Definition 3.30 (ii), and $C_{\sqrt{2}}$ is a cut. 
+	
+	What remains to be shown is that $C_{\sqrt{2}}$ is distinct from any rational cut. Which means there must exist no closest element $q\in\Q$ where for every $b\in\Q$ such that $b<\sqrt{2}$, it is also true that $b<q$. 
+	
+	Let $a\in\Q$ be any element such that $2<a^2$. Consider some smaller element $(a-1/n)$ where $n\in\N$. Squaring this smaller element gives
+	\[\begin{split}
+		(a-1/n)^2 &= a^2 - 2a/n + 1/n^2\\
+		&>a^2 - 2a/n.
+	\end{split}\]
+	I claim there must exist $n_0\in\N$ such that $a^2 - 2a/n_0 > 2$. Rearranging this equality gives $$n_0 > 2a/(a^2-2).$$ Since $a^2-2$ must be positive and $\N$ is unbounded, $n_0$ must exist. Therefore, $$a^2 - 2a/n_0 > 2.$$ Since $$(a-1/n_0)^2 > a^2 - 2a/n_0,$$ it must be true that $$(a-1/n_0)^2 > 2.$$ Thus, for every $q\in\Q$ where $q>\sqrt{2}$, there exists $b\in\Q$ such that $b<q$ and $b>\sqrt{2}$. So $b\in C_q$ and $b\notin C_{\sqrt{2}}$. Therefore, $C_{\sqrt{2}} \notin \{C\in\R: C \text{ is a rational cut}\}$, and $\{C\in\R: C \text{ is a rational cut}\}\subsetneq \R$. 
+	
+\end{proof}
+
+
+
+
+
+
+\bigskip \section{Adding a topology}
+
+In this sheet we give a continuum $C$ a topology.  Roughly speaking, this is a way to describe how the points of $C$ are `glued together'.  
+
+\medskip
+
+
+
+
+\begin{definition}
+A subset of a continuum is \emph{closed} if it contains all of its limit points.
+\end{definition}
+
+\begin{theorem}  The sets $\emptyset$ and $C$ are closed.
+\end{theorem}
+
+\begin{proof}
+	Since the empty set has no points, it cannot have any limit points. Therefore, there exists no limit point $p$ where $p\in\emptyset$. The empty set is therefore closed.
+	
+	Let $p$ be any limit point of a continuum $C$. By Definition 3.15, $p\in C$. Therefore, $C$ is closed.
+\end{proof}
+
+\begin{theorem}  A subset of $C$ containing a finite number of points is closed.
+\end{theorem}
+
+\begin{proof}
+	Let $A$ be any finite subset of $C$. By Theorem 3.27, $A$ does not have any limit points. Therefore, there exists no limit point $p$ where $p\notin A$. The empty set is therefore closed.
+\end{proof}
+
+\begin{definition}
+Let $X$ be a subset of $C$.  The \emph{closure} of $X$ is the subset $\overline{X}$ of $C$ defined by:
+\[
+\overline{X} = X \cup LP(X).
+\]
+\end{definition}
+
+\begin{theorem}  For any $X\subset C$, $X$ is closed if and only if $X = \overline{X}$.
+\end{theorem}
+
+\begin{proof}
+	Let $X = \overline{X}$. Then by the definition of closure, $LP(X)\subset X$, and $X$ is closed.
+	
+	Let $X$ be closed. For any point $p$ in $LP(X)$ it must be true that $p\in X$. Therefore, $LP(X)\subset X$ and $X\cup LP(X) = X$. However this is definition of closure, so $X = \overline{X}$.
+	
+	Since both statements imply the other, the proof is complete.
+\end{proof}
+
+\begin{theorem}  The closure of $X \subset C$ satisfies $\overline{X} = \overline{\overline{X}}$.
+\end{theorem}
+
+\begin{proof}
+	By the definition of closure, $\overline{\overline{X}} = \overline{X} \cup LP(\overline{X})$. To arrive at the desired conclusion, it needs to be shown that $LP(\overline{X})\subset \overline{X}$, and thereby $\overline{X} \cup LP(\overline{X}) = \overline{X}$. 
+	
+	Since $\overline{X} = X \cup LP(X)$, if $p\in LP(\overline{X})$, $p$ must be a limit point of $X$ or a limit point of $LP(X)$ by Theorem 3.23. Consider any limit point $p$ of $LP(X)$, and assume for contradiction that $p$ is not a limit point of $X$. By Definition 2.15, there must exist $I_p$ with $p\in I_p$ where $$I_p \cap (LP(X)\setminus \{p\}) \not= \emptyset \text{ and } I_p \cap (X\setminus \{p\}) = \emptyset.$$ Let $y\in I_p \cap (LP(X)\setminus \{p\})$. It must be true that $y\in I_p$ and $y\in LP(X)$. Therefore, $y$ is a limit point of $X$ and for every interval $I$ where $y\in I$ it is true that $$I \cap (X\setminus \{y\}) \not= \emptyset.$$ However, $y\in I_p$ so it must be true that $$I_p \cap (X\setminus \{y\}) \not= \emptyset,$$ producing a contradiction. Therefore, any limit point of $LP(X)$ must be a limit point of $X$, and $$LP(\overline{X}) = LP(X).$$ Hence, $$LP(\overline{X})\subset \overline{X},$$ so 
+	\[\begin{split}
+		\overline{\overline{X}} &= \overline{X} \cup LP(\overline{X})\\
+		\overline{\overline{X}} &= \overline{X}.
+	\end{split}\]
+\end{proof}
+
+\begin{corollary}  Given any subset $X \subset C$, the closure $\overline{X}$ is closed.
+\end{corollary}
+
+\begin{proof}
+	By Theorem 4.6, $\overline{X} = \overline{\overline{X}}$, so by Theorem 4.5, $\overline{X}$ is closed.
+\end{proof}
+
+\begin{definition}  A subset $G$ of a continuum $C$ is \emph{open} if its complement $C \setminus G$ is closed.
+\end{definition}
+
+\begin{theorem}\label{fortop1}  The sets $\emptyset$ and $C$ are open.
+\end{theorem}
+
+\begin{proof}
+	The complement of $C$ is the empty set. Since $C$ is closed by Theorem 4.2, the $\emptyset$ is open by Definition 4.8. But the complement of the empty set is $C$. Since by Theorem 4.2, the $\emptyset$ is closed, by Definition 4.8, $C$ is open. 
+\end{proof}
+
+The following is a very useful criterion to determine whether a set of points is open.
+
+\begin{theorem}  Let $G \subset C$.  Then $G$ is open if and only if for all $x \in G$, there exists an interval $I$ such that $x \in I \subset G$.
+\end{theorem}
+
+\begin{proof}
+	If $G$ is open, then by Definition 4.8, the complement $C\setminus G$ is closed and contains all of its limit points. Let $x\in G$. Since $x\notin C\setminus G$, there must exist an interval $I$ such that $x\in I$ and $I\cap (C\setminus G)\setminus \{x\}) = \emptyset$. Therefore, $I\subset G$, proving the forward relation.
+	
+	To prove the reverse implication, consider any $x\in G$ and let $x\in I$ where $I\subset G$. It follows that $I\cap (C\setminus G) = \emptyset$. It then must be true that $I\cap ((C\setminus G)\setminus \{x\})  = \emptyset$. Therefore, $x$ cannot be a limit point of $C\setminus G$. Since $x$ is any element of $G$, no element of $G$ can be a limit point of $C\setminus G$. Therefore, if $C\setminus G$ has any limit points, they must be contained in the set $C\setminus G$ and $C\setminus G$ is closed. By Definition 4.8, $G$ must be open, thus proving the reverse relation.
+\end{proof}
+
+\begin{corollary}  Every interval $I$ is open.  Every complement of an interval, $C \setminus I,$ is closed.
+\end{corollary}
+
+\begin{proof}
+	For $I$ to be open, by Theorem 4.10, for every point $x\in I$ there must exist some interval $I_x$ where $x\in I_x$ and $I_x\subset I$. Seeing as $x\in I$ and $I\subset I$, any interval $I$ satisfies this definition, and is open. Therefore, by Definition 4.8, $C\setminus I$ is closed.
+\end{proof}
+
+\begin{corollary} Let $G\subset C.$ Then $G$ is open if and only if for all $x\in G,$ there exists a subset $V\subset G$ such that $x\in V$ and $V$ is open. 
+\end{corollary} 
+
+\begin{proof}
+	Let $G$ be open. By Theorem 3.10, for every point $x \in G$, there exists an interval $I$ such that $x \in I \subset G$. Since $I$ is an open set by Corollary 4.11, this satisfies the reverse implication condition.
+	
+	To prove the forward implication, for all $x\in G,$ let there exist a subset $V\subset G$ such that $x\in V$ and $V$ is open. Since $V$ is open and $x\in V$, by Definition 4.10, there must exist an interval $I_x$ where $x\in I_x$ and $I_x\subset V$. Since $V\subset G$, it follows that $I_x\subset G$. Therefore for all $x\in G$, there exists an interval $I_x$ where $x\in I_x$ and $I_x\subset G$, and $G$ is open by Definition 4.10.
+\end{proof}
+
+\begin{corollary}  Let $a \in C$.  Then the sets $\{ x \mid x < a\}$ and $\{x \mid a < x \}$ are open.
+\end{corollary}
+
+\begin{proof}
+	Consider any $b\in \{ x \mid x < a\}$. It must be true that $b-1\in \{ x \mid x < a\}$. Therefore, the interval $(b-1,a)$ exists, with $b\in (b-1,a)$ and $(b-1,a)\subset \{ x \mid x < a\}$. Since the choice of $b$ can be any element of $\{ x \mid x < a\}$, the set is therefore open by Theorem 4.10. 
+	
+	Consider any $b\in \{ x \mid x > a\}$. It must be true that $b+1\in \{ x \mid x > a\}$. Therefore, the interval $(a,b+1)$ exists, with $b\in (a,b+1)$ and $(a,b+1)\subset \{ x \mid x > a\}$. Since the choice of $b$ can be any element of $\{ x \mid x > a\}$, the set is therefore open by Theorem 4.10.
+\end{proof}
+
+\begin{theorem}\label{union}  Let $G$ be a nonempty open set.  Then $G$ is the union of a collection of intervals.  
+\end{theorem}
+
+\begin{proof}
+	Since $G$ is open, for every $x\in G$ there exists some interval $I_m$, where $x\in I_m$ and $I_m\subset G$. Let $\mathcal{I}$ be the family of these sets so $$\mathcal{I} = \{I_m \subset G\mid x\in G \text{ and } x\in I_m\}.$$ Therefore, the union of every set in $\mathcal{I}$ must contain every element of $G$, so $$G\subset \bigcup_m \ I_m.$$. Since each set $I_m$ is a subset of $G$, $$\bigcup_m \ I_m \subset G.$$ Therefore, $G$ is the union of intervals. 
+\end{proof}
+
+
+\begin{exercise}  Do there exist subsets $X \subset C$ that are neither open nor closed?
+\end{exercise}
+
+
+
+\begin{theorem}  Let $\{X_{\lambda} \}$ be an arbitrary collection of closed subsets of a continuum $C.$  Then the intersection
+\[
+	\bigcap_{\lambda} X_{\lambda}
+\]
+is closed.
+\end{theorem}
+
+\begin{theorem} \label{*} Let $G_1, \dotsc, G_n$ be a finite collection of open subsets of a continuum $C.$.  Then the intersection $G_1 \cap \dotsm \cap G_n$ is open.
+\end{theorem}
+
+
+\begin{exercise}  Is it necessarily the case that the intersection of an infinite number of open sets is open? Is it possible to construct an infinite collection of open sets whose intersection is not open?  Equivalently, is it possible to construct an infinite collection of closed sets whose union is not closed?
+\end{exercise} 
+
+\begin{corollary}\label{fortop2}  Let $\{G_{\lambda} \}$ be an arbitrary collection of open subsets of a continuum $C$.  Then the union $\bigcup_{\lambda} G_{\lambda}$ is open.  Let $X_1, \dotsc, X_n$ be a finite collection of closed subsets of a continuum $C$.  Then the union $X_1 \cup \dotsm \cup X_n$ is closed.
+\end{corollary}
+
+\Cref{union} says that every nonempty open set is the union of a collection of intervals.  This necessary condition for open sets is also sufficient:
+
+
+ \begin{corollary}
+ Let $G \subset C$ be nonempty.  Then $G$ is open if and only if $G$ is the union of a collection of intervals.
+\end{corollary}
+
+\begin{corollary} If $(a, b)$ is an interval in $C,$ then $\ext(a,b)$ is open.
+\end{corollary} 
+
+
+%
+%
+%\Cref{fortop1}, \Cref{fortop2} and \Cref{*} say that the collection $\mathscr{T}$ of open subsets of a continuum $C$ is a topology on $C$, in the following sense:
+%
+%\begin{definition}
+%Let $X$ be any set.  A \emph{topology} on $X$ is a collection $\mathscr{T}$ of subsets of $X$ that satisfy the following properties:
+%\begin{enumerate}
+%\item  $X$ and $\emptyset$ are elements of $\mathscr{T}$.
+%\item  The union of an arbitrary collection of sets in $\mathscr{T}$ is also in $\mathscr{T}$.
+%\item  The intersection of a finite number of sets in $\mathscr{T}$ is also in $\mathscr{T}$.
+%\end{enumerate}
+%The elements of $\mathscr{T}$ are called the \emph{open sets} of $X$.  The set $X$ with the structure of the topology $\mathscr{T}$ is called a \emph{topological space}\footnote{The word \emph{topology} comes from the Greek word \emph{topos} ($\tau \acute{o} \pi o \zeta$), which means ``place''.}.
+%\end{definition}
+%
+%
+%
+%
+%\begin{definition}  A topological space $X$ is \emph{discrete} if every subset of $X$ is open.
+%\end{definition}
+%
+%
+%\begin{exercise}  Find a realization of a continuum that is discrete.  Must every realization be discrete?
+%\end{exercise}
+
+
+\begin{definition}
+Let $X\subset C$. Then $X$ is {\it disconnected} if it may be written as $X=A\cup B,$ where $A$ and $B$ are disjoint, non-empty open sets in $X.$  We say that $X$ is {\it connected} if it is not disconnected.
+\end{definition} 
+
+
+\begin{exercise} Let $C$ be a continuum and $a\in C.$ Prove that $C\setminus\{a\}$ is a disconnected continuum.
+\end{exercise} 
+
+
+
+\section{Connectedness and boundedness}
+
+
+\begin{axiom}
+A continuum is connected.
+\end{axiom}
+
+\begin{theorem}
+The only subsets of a continuum $C$ that are both open and closed are $\emptyset$ and~$C$.
+\end{theorem}
+
+\begin{theorem}
+For all $x, y \in C$, if $x < y$, then there exists $z \in C$ such that $z$ is in between $x$ and $y$.
+\end{theorem}
+
+\begin{corollary}
+Every interval is infinite.
+\end{corollary}
+
+\begin{corollary}  Every point of $C$ is a limit point of $C$.  
+\end{corollary}
+
+\begin{corollary} 
+Every point of an interval $(a,b)$ is a limit point of $(a,b)$.
+\end{corollary}
+
+
+
+
+We will now introduce boundedness.   The first definition should be intuitively clear.  The second is subtle and powerful.  
+
+
+\begin{definition}  Let $X$ be a subset of $C$.  A point $u$ is called an \emph{upper bound} of $X$ if for all $x \in X$, $x \leq u$.  A point $l$ is called a \emph{lower bound} of $X$ if for all $x \in X$, $l \leq x$.  If there exists an upper bound of $X$, then we say that $X$ is \emph{bounded above}.  If there exists a lower bound of $X$, then we say that $X$ is \emph{bounded below}.  If $X$ is bounded above and below, then we simply say that $X$ is \emph{bounded}.
+\end{definition}
+
+
+\begin{definition}  Let $X$ be a subset of $C$.  We say that $u$ is a \emph{least upper bound} or {\em supremum} of $X$ and write $u = \sup X$ if:
+\begin{enumerate}
+\item  $u$ is an upper bound of $X$, and
+\item  if $u'$ is an upper bound of $X$, then $u \leq u'$.
+\end{enumerate}
+We say that $l$ is a \emph{greatest lower bound} or {\em infimum} and write $l = \inf X$ if:
+\begin{enumerate}
+\item $l$ is a lower bound of $X$, and
+\item if $l'$ is a lower bound of $X$, then $l' \leq l$.
+\end{enumerate}
+\end{definition}
+
+%\noindent The notation $\sup$ comes from the word \emph{supremum}, which is another name for least upper bound.  The notation $\inf$ comes from the word \emph{infimum}, which is another name for greatest lower bound.
+
+\begin{exercise}  If $\sup X$ exists, then it is unique, and similarly for $\inf X$.
+\end{exercise}
+
+
+
+
+
+
+
+The following lemma is extremely useful when dealing with suprema; an analogous statement can be made for infima.
+\begin{lemma} 
+\label{lem1}
+Suppose that $X \subset C$ and $s = \sup X$.
+If $p<s$, then there exists an $x\in X$ such that $p < x \le s$.
+\end{lemma} 
+
+
+\begin{theorem}  Let $a < b$.  The least upper bound and greatest lower bound of the interval $(a,b)$ are:
+\[
+\sup (a,b) = b \quad \text{and} \quad \inf (a,b) = a.
+\]
+\end{theorem}
+
+
+
+
+\begin{lemma}  
+Let $X$ be a subset of $C$.
+Suppose that $\sup X$ exists and $\sup X \notin X$.  Then $\sup X$ is a limit point of $X$.  The same holds for $\inf X$.
+\end{lemma} 
+
+\begin{corollary}  Both $a$ and $b$ are limit points of the interval $(a,b)$.
+\end{corollary}
+
+Let $[a, b]$ denote the closure $\overline{(a,b)}$ of the interval $(a,b)$.  
+
+\begin{corollary}
+The closed ineterval $[a, b] = \{x \in C \mid a \leq x \leq b  \}$.
+\end{corollary}
+
+
+
+\begin{lemma}  Let $X \subset C$ and define:
+\[
+\Psi(X) = \{ x \in C \mid \text{$x$ is not an upper bound of $X$} \}.
+\]
+Then $\Psi(X)$ is open.
+Define:
+\[
+\Omega(X) = \{ x \in C \mid \text{$x$ is not a lower bound of $X$} \}.
+\]
+Then $\Omega(X)$ is open.
+\end{lemma}
+
+
+\begin{theorem}  Suppose that $X$ is nonempty and bounded above. Then $\sup X$ exists. Similarly, if $X$ is nonempty and bounded below, then $\inf X$ exists.
+\end{theorem}
+
+\begin{corollary}  Every nonempty closed and bounded set has a first point and a last point.
+\end{corollary}
+
+
+\begin{exercise}  Is this true for $\mathbb{Q}$?
+\end{exercise}
+
+
+
+
+\subsection{Building a continuum: the real numbers are connected}
+
+\begin{exercise}
+	Show that $\Q$ is not connected.
+\end{exercise}
+
+
+
+%Suppose that $\cA$ and $\cB$ are open, disjoint subsets of $\R$ such that
+%	\[
+%		\cA \cup \cB = \R.
+%	\]
+%	
+\begin{lemma}
+	\begin{enumerate}[(i)]
+		\item Suppose that $\cA \subset \R$ is bounded from above.  Show that $\cA$ has a supremum.
+		\item Suppose that $\cA \subset \R$ is bounded from below.  Show that $\cA$ has a infimum.
+	\end{enumerate}
+\end{lemma}
+
+
+\begin{lemma}
+Suppose that $\cA$ is an open set in $\R$, and let $A \in \cA$.  If there is $\underline B, \overline B \in \R$ such that $\underline B < A < \overline B$, then there are points $P_1, P_2 \in \R\setminus \cA$ such that
+\[
+	A \in (P_1, P_2)
+		\quad\text{ and }\quad
+	(P_1, P_2) \subset \cA.
+\]
+\end{lemma}
+
+
+
+
+\begin{theorem}
+	Show that $\R$ is connected.
+\end{theorem}
+
+
+
+
+At this point, we see that $\R$ is a continuum.  (Side note: can you think of any other sets that satisfy the axioms of a continuum?)  All previous results, thus, apply to it.  If you feel inclined, think about how our usual actions of addition, subtraction, multiplication, and division can be defined using the Dedekind cuts.  From this point on, we can always imagine $C$ to be $\R$.  This is not necessary, but it may help with intuition.
+
+
+
+
+
+
+
+
+
+
+\section{Compactness}
+
+
+
+\begin{definition}  Let $X$ be a subset of $C$ and let $\mathcal{G} = \{ G_{\lambda} \}_{\lambda \in \Lambda}$ be a collection of subsets of~$C$.  We say that $\mathcal{G}$ is a \emph{cover} of $X$ if every point of $X$ is in some $G_{\lambda}$, or in other words:
+\[
+X \subset \bigcup_{\lambda \in \Lambda} G_{\lambda}.
+\]
+We say that the collection $\mathcal{G}$ is an \emph{open cover} if each $G_{\lambda}$ is open.
+\end{definition}
+
+\begin{definition}  Let $X$ be a subset of $C$.  $X$ is \emph{compact} if for every open cover $\mathcal{G}$ of $X$, there exists a finite subset $\mathcal{G}' \subset \mathcal{G}$ that is also an open cover.
+\end{definition}
+
+\noindent  A good summary of the definition of compactness is ``every open cover contains a finite subcover''.
+
+
+\begin{exercise}
+Show that all finite subsets of $C$ are compact.
+\end{exercise} 
+
+\begin{lemma}
+No finite collection of intervals covers $C$.
+\end{lemma}
+
+\begin{theorem}  
+$C$ is not compact.
+
+\end{theorem}
+
+
+\begin{exercise}
+Show that intervals are not compact.
+\end{exercise} 
+
+\begin{theorem}  \label{compactimpliesbounded} If $X$ is compact, then $X$ is bounded.
+\end{theorem}
+
+
+\begin{lemma}   Let $X\subset C$ and $p\in C\setminus X.$ Then
+\[
+\mathcal{G} = \{ \ext(a,b) \mid (a,b) \text{ contains } p  \}
+\]
+is an open cover of $X.$ 
+\end{lemma}
+
+
+
+\begin{theorem} \label{compactimpliesclosed} If $X$ is compact, then $X$ is closed.
+\end{theorem}
+
+It will turn out that the two properties of compactness in \Cref{compactimpliesbounded} and \Cref{compactimpliesclosed} characterize compact sets completely (at least in $C$), meaning that every bounded closed set is compact.  The rest of the sheet is concerned with proving this fact.
+
+
+\newcommand\cG{\mathcal G}
+
+For the next three results, fix points $a,b\in C$ and suppose $\cG$ is an open cover of $[a,b]$.
+
+\begin{lemma}
+\label{lem2}
+For all $s\in[a,b]$, there exist $G\in\cG$ and $p,q\in C$ such that $p<s<q$ and $[p,q]\subset G$.
+\end{lemma}
+
+
+
+\begin{definition}
+	Fix $\bar x \in C$.  We say that $\bar x$ is \emph{reachable from $a$} if there exist $n\in\N\cup\{0\}$, $x_0,\ldots,x_n\in C$, and $G_1,\ldots,G_n\in\cG$ such that 
+	\[
+		a=x_0<x_1<\ldots<x_{n-1}<x_n=\bar x
+	\]
+	and
+	\[
+		[x_{i-1},x_i]\subset G_i
+			\quad\text{ for each } i \in \{1,2,\dots, n\}.
+	\]
+\end{definition}
+
+
+
+\begin{theorem}
+Let $X$ be the set of all $\bar x\in C$ that are \emph{reachable from $a$}.  Then the point $b$ is not an upper bound for $X$.
+%
+%(Hint: suppose $b$ is an upper bound, and apply \Cref{lem2,lem1} to $s=\sup X$.)
+\end{theorem}
+
+\begin{corollary}
+There is a finite subset $\cG'\subset\cG$ that is a cover of $[a,b]$.
+\end{corollary}
+
+\begin{corollary}
+The set $[a, b]$ is compact.
+\end{corollary}
+
+This last corollary is the main ingredient for the proof of the Heine-Borel theorem.
+
+\begin{lemma}
+A closed subset $Y$ of a compact set $X \subset C$ is compact.
+\end{lemma}
+
+\begin{theorem} If $X \subset C$, then  $X$ is compact if and only if $X$ is closed and bounded.
+\end{theorem}
+
+
+\begin{lemma}
+A compact set $X \subset C$ with no limit points must be finite.
+\end{lemma}
+
+\begin{theorem} Every bounded infinite subset of $C$ has at least one limit point.
+\end{theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
