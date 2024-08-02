@@ -1086,7 +1086,7 @@ It may seem strange that we are defining $\R$ here.  Surely, we already know wha
 	
 	Together, this shows $\prec $ satisfies definition 3.2 (a). 
 	
-	Let $A,B,C\in\R$ be cuts with $A<B$ and $B<C$. Therefore, $A\subset B$ and $B\subset C$, and $A\subset C$ as a result, thereby satisfying definition 3.2 (b). Because $<$ contains all properties of an ordering, $<$ is an ordering on $\R$.
+	Let $A,B,C\in\R$ be cuts with $A\prec B$ and $B\prec C$. Therefore, $A\subset B$ and $B\subset C$, and $A\subset C$ as a result, thereby satisfying definition 3.2 (b). Because $\prec $ contains all properties of an ordering, $\prec $ is an ordering on $\R$.
 \end{proof}
 
 \begin{definition}
@@ -1121,17 +1121,17 @@ It may seem strange that we are defining $\R$ here.  Surely, we already know wha
 \begin{proof}
 	Fix $a\in\Q$. By Lemma 3.32, for any $q\in\Q$, $C_q$ must exist, so $C_a$ must exist. Therefore $\R$ is nonempty.
 	
-	To show that $\R$ has no first point, assume for contradiction that it does have first point or first cut. Let this cut be defined as $C_f\in\R$. Since $C_f$ must be nonempty, there must exist some point $p\in C_f$ where $p\in \Q$. Since $p\in \Q$, by Lemma 3.33, we can form a rational cut $C_p$. Seeing as every $x\in C_p$ must be less than $p$, and $p\in C_f$, every $x\in C_f$ as well. Since $C_f$ has no largest point, there must also exist $q\in C_f$ where $p<q$, and $q\notin C_p$. Therefore, $C_p \prec C_f$, contradicting that $C_f$ is the first cut of $\R$, so $\R$ must not have a first point.
+	To show that $\R$ has no first point, assume for contradiction that it does have first point or first cut. Let this cut be defined as $C_f\in\R$. Since $C_f$ must be nonempty, there must exist some point $p\in C_f$. Since by definition $p\in \Q$, by Lemma 3.33, we can form a rational cut $C_p$. Seeing as every $x\in C_p$ must be less than $p$, and $p\in C_f$, every $x\in C_f$ for all $x$. Since $C_f$ has no largest point, there must also exist $q\in C_f$ where $p<q$, and therefore $q\notin C_p$. Thus, $C_p \prec C_f$, contradicting that $C_f$ is the first cut of $\R$, so $\R$ must not have a first point.
 	
 	To show that $\R$ has no last point, assume for contradiction that it does have a last point or last cut. Let this cut be defined as $C_l\in\R$. Since no cut can be all of $\Q$, $\Q\setminus C_l$ is nonempty. Let $d\in \Q\setminus C_l$ and fix any $a\in C_l$. Due to the trichotomy property of the ordering on $\Q$, $a$ and $d$ must fit one of three relations: $a<d$, $a=d$, or $a>d$.
 	
-	It cannot be true that $d>a$, as it follows that $d\in C_l$ and could not be in $\Q\setminus C_l$. 
+	It cannot be true that $d>a$, as that would mean $d\in C_l$, and could not be in $\Q\setminus C_l$. 
 	
 	It cannot be true that $d=a$. Since $a$ is not the largest element of $C_l$, there exists $b\in C_l$ such that $a<b$. Therefore, $d<b$ and $d\in C_l$. This contradicts our choice of $d\in\Q\setminus C_l$.
 	
 	By elimination, $d>a$.
 	
-	Since $d\in \Q$, $d+1\in\Q$, and the rational cut $C_{d+1}$ can be formed. Since $d<d+1$
+	Since $d\in \Q$, $d+1\in\Q$, and the rational cut $C_{d+1}$ can be formed. Because $d<d+1$, $d\in C_{d+1}$. The choice of $a\in C_l$ was arbitrary, so every element $a\in C_l$ satisfies $a<d$, which means $a<d+1$, and therefore $a\in C_{d+1}$. Therefore, $C_l\prec C_{d+1}$, contradicting $C_l$ as the last cut. Thus, $\R$ cannot have a last cut.
 \end{proof}
 
 \begin{exercise}
@@ -1147,11 +1147,13 @@ It may seem strange that we are defining $\R$ here.  Surely, we already know wha
 	
 	To show that $\{C\in\R: C \text{ is a rational cut}\}\subsetneq \R$, I claim that $C_{\sqrt{2}} = \{x\in\Q: x<0 \text{ or } x^2<2\}$ is a cut which is distinct from any rational cut.
 	
-	Consider $-1,2\in\Q$. Since $-1<0$, $-1\in C_{\sqrt{2}}$, and $2^2 > 2$ so $2\notin C_{\sqrt{2}}$. Therefore, $C_{\sqrt{2}}$ is nonempty and not all of $\Q$, satisfying Definition 3.30 (i).
+	Consider $-1,2\in\Q$. Since $-1<0$, $-1\in C_{\sqrt{2}}$. Also, $2^2 > 2$ so $2\notin C_{\sqrt{2}}$. Therefore, $C_{\sqrt{2}}$ is nonempty and not all of $\Q$, satisfying Definition 3.30 (i).
 	
-	Consider any $a\in\Q$ and $a<0$ or $a^2<2$. From our definition of $C_{\sqrt{2}}$, $a\in C_{\sqrt{2}}$. Since $\Q$ is unbounded, there must always exist $b\in\Q$ such that $b<a$. Therefore, either $b<0$ or $b^2<2$ so $b\in C_{\sqrt{2}}$, which satisfies Definition 3.30 (iii).
+	Consider any $a\in\Q$ and $a<0$ or $a^2<2$. From our definition of $C_{\sqrt{2}}$, $a\in C_{\sqrt{2}}$. Consider $a-2\in \Q$. If $a<0$ it must be true that $a-2<0$ and therefore in $C_{\sqrt{2}}$. If $a>0$ it must be true that $a^2 < 2$. Therefore $a<2$ and it follows that $a-2<0$. Since the choice of $a$ was arbitrary, for any $a\in C_{\sqrt{2}}$, $a-2 \in C_{\sqrt{2}}$, satisfying Definition 3.30 (iii).
 	
-	To show that there is no largest element of $C_{\sqrt{2}}$, let $a\in C_{\sqrt{2}}$. Consider $(a+1/n)$ where $n$ is some $n\in\N$. Squaring gives
+	To show that there is no largest element of $C_{\sqrt{2}}$, let $a\in C_{\sqrt{2}}$. First consider the case where $a<0$. For any $a<0$, $a/2 > a$ and $a/2 < 0$.
+	
+	For the case where $a>0$, consider $(a+1/n)$ where $n$ is some $n\in\N$. Squaring gives
 	\[\begin{split}
 		(a+1/n)^2 &= a^2 + 2a/n + 1/n^2\\
 				&<a^2 + 2a/n + 1/n\\
@@ -1159,12 +1161,14 @@ It may seem strange that we are defining $\R$ here.  Surely, we already know wha
 	\end{split}\]
 	I claim that there must exist $n_0\in\N$ such that $a^2 + (2a+1)/n_0 < 2$. Rearranging this equality gives $$(2a+1)/(2-a^2) < n_0.$$ This $n_0$ must exist as $2-a^2 > 0$ and $\N$ is unbounded. 
 	
-	Since $$a^2 + (2a+1)/n_0 < 2,$$ and 
+	So $$a^2 + (2a+1)/n_0 < 2,$$ and 
 	\[\begin{split}
 		(a+1/n_0)^2 &< a^2 + (2a+1)/n_0\\
-		(a+1/n_0)^2 &< 2.
+		(a+1/n_0)^2 &< 2,
 	\end{split}\]
-	Therefore, there is no largest element of $C_{\sqrt{2}}$, which satisfies Definition 3.30 (ii), and $C_{\sqrt{2}}$ is a cut. 
+	Therefore, $(a+1/n_0) \in C_{\sqrt{2}}$. Since the choice of $a$ was arbitrary there can be no largest element of $C_{\sqrt{2}}$, which satisfies Definition 3.30 (ii). 
+	
+	All three criteria have been satisfied, and $C_{\sqrt{2}}$ is a cut. 
 	
 	What remains to be shown is that $C_{\sqrt{2}}$ is distinct from any rational cut. Which means there must exist no closest element $q\in\Q$ where for every $b\in\Q$ such that $b<\sqrt{2}$, it is also true that $b<q$. 
 	
@@ -1173,7 +1177,7 @@ It may seem strange that we are defining $\R$ here.  Surely, we already know wha
 		(a-1/n)^2 &= a^2 - 2a/n + 1/n^2\\
 		&>a^2 - 2a/n.
 	\end{split}\]
-	I claim there must exist $n_0\in\N$ such that $a^2 - 2a/n_0 > 2$. Rearranging this equality gives $$n_0 > 2a/(a^2-2).$$ Since $a^2-2$ must be positive and $\N$ is unbounded, $n_0$ must exist. Therefore, $$a^2 - 2a/n_0 > 2.$$ Since $$(a-1/n_0)^2 > a^2 - 2a/n_0,$$ it must be true that $$(a-1/n_0)^2 > 2.$$ Thus, for every $q\in\Q$ where $q>\sqrt{2}$, there exists $b\in\Q$ such that $b<q$ and $b>\sqrt{2}$. So $b\in C_q$ and $b\notin C_{\sqrt{2}}$. Therefore, $C_{\sqrt{2}} \notin \{C\in\R: C \text{ is a rational cut}\}$, and $\{C\in\R: C \text{ is a rational cut}\}\subsetneq \R$. 
+	I claim there must exist $n_0\in\N$ such that $a^2 - 2a/n_0 > 2$. Rearranging this equality gives $$n_0 > 2a/(a^2-2).$$ Since $a^2-2$ must be positive and $\N$ is unbounded, $n_0$ must exist. Therefore, $$a^2 - 2a/n_0 > 2.$$ Since $$(a-1/n_0)^2 > a^2 - 2a/n_0,$$ it must be true that $$(a-1/n_0)^2 > 2.$$ Thus, for any choice of $q\in\Q$ where $q>\sqrt{2}$, there exists $b\in\Q$ such that $b<q$ and $b>\sqrt{2}$. The rational cut $C_q$ exists, with $b\in C_q$ and $b\notin C_{\sqrt{2}}$. This means that for every $q\in \Q$ satisfying $q> \sqrt{2}$, $C_{\sqrt{2}} \prec C_q$. Therefore, $C_{\sqrt{2}} \notin \{C\in\R: C \text{ is a rational cut}\}$, and $\{C\in\R: C \text{ is a rational cut}\}\subsetneq \R$. 
 	
 \end{proof}
 
@@ -1235,11 +1239,23 @@ Let $X$ be a subset of $C$.  The \emph{closure} of $X$ is the subset $\overline{
 \begin{proof}
 	By the definition of closure, $\overline{\overline{X}} = \overline{X} \cup LP(\overline{X})$. To arrive at the desired conclusion, it needs to be shown that $LP(\overline{X})\subset \overline{X}$, and thereby $\overline{X} \cup LP(\overline{X}) = \overline{X}$. 
 	
-	Since $\overline{X} = X \cup LP(X)$, if $p\in LP(\overline{X})$, $p$ must be a limit point of $X$ or a limit point of $LP(X)$ by Theorem 3.23. Consider any limit point $p$ of $LP(X)$, and assume for contradiction that $p$ is not a limit point of $X$. By Definition 2.15, there must exist $I_p$ with $p\in I_p$ where $$I_p \cap (LP(X)\setminus \{p\}) \not= \emptyset \text{ and } I_p \cap (X\setminus \{p\}) = \emptyset.$$ Let $y\in I_p \cap (LP(X)\setminus \{p\})$. It must be true that $y\in I_p$ and $y\in LP(X)$. Therefore, $y$ is a limit point of $X$ and for every interval $I$ where $y\in I$ it is true that $$I \cap (X\setminus \{y\}) \not= \emptyset.$$ However, $y\in I_p$ so it must be true that $$I_p \cap (X\setminus \{y\}) \not= \emptyset,$$ producing a contradiction. Therefore, any limit point of $LP(X)$ must be a limit point of $X$, and $$LP(\overline{X}) = LP(X).$$ Hence, $$LP(\overline{X})\subset \overline{X},$$ so 
+	Since $\overline{X} = X \cup LP(X)$, if $p\in LP(\overline{X})$, $p$ must be a limit point of $X$ or a limit point of $LP(X)$ by Theorem 3.23. Consider any limit point $p$ of $LP(X)$. By Definition 2.15, for every interval $I$ with $p\in I$, it must be true that $$I \cap (LP(X)\setminus \{p\}) \not= \emptyset.$$ Let $I_1$ be one such interval. It must be true that there exists some $y\in I_1$ and $y\in LP(X)$. Therefore, $y$ is a limit point of $X$ and for every interval $I^\prime$ where $y\in I^\prime$ it is true that $$I^\prime \cap (X\setminus \{y\}) \not= \emptyset.$$ Construct interval $I_2$ as follows. Since $y\not=p$, by Theorem 3.25, disjoint intervals $I_y$ and $I_p$ exist with $y\in I_y$ and $p\in I_p$. Since $y,p\in I_1$ and $y\in I_y$, by Theorem 3.20, we can define the interval $I_2 = I_1 \cap I_y$ such that $y\in I_2$ and $p\notin I_2$. Therefore, $$I_2 \cap (X\setminus \{y\}) \not= \emptyset.$$ Since $p\notin I_2$ the above intersection is equivalent to $$I_2 \cap (X\setminus \{y,p\}) \not= \emptyset.$$ Since $I_2\subset I_1$ and $X\setminus \{y,p\} \subset X\setminus \{p\}$, it must bet true that $$I_1 \cap (X\setminus \{p\}) \not= \emptyset.$$  Seeing as the choice of $I_1$ and $I_2$ was arbitrary, this applies for any pair of $I$ and $I^\prime$. Thus, given that $p$ is a limit point of $LP(X)$ it has been shown that $p$ is a limit point of $X$. So
+	\[\begin{split}
+		LP(\overline{X}) &= LP(X\cup LP(X))\\
+		LP(\overline{X}) &= LP(X)
+	\end{split}\].
+	Therefore,
 	\[\begin{split}
 		\overline{\overline{X}} &= \overline{X} \cup LP(\overline{X})\\
-		\overline{\overline{X}} &= \overline{X}.
-	\end{split}\]
+		\overline{\overline{X}} &= \overline{X} \cup LP(X)\\
+		\overline{\overline{X}} &= \overline{X}
+	\end{split}\].
+	
+	%and assume for contradiction that $p$ is not a limit point of $X$. By Definition 2.15, there must exist $I_p$ with $p\in I_p$ where $$I_p \cap (LP(X)\setminus \{p\}) \not= \emptyset \text{ and } I_p \cap (X\setminus \{p\}) = \emptyset.$$ Let $y\in I_p \cap (LP(X)\setminus \{p\})$. It must be true that $y\in I_p$ and $y\in LP(X)$. Therefore, $y$ is a limit point of $X$ and for every interval $I$ where $y\in I$ it is true that $$I \cap (X\setminus \{y\}) \not= \emptyset.$$ However, $y\in I_p$ so it must be true that $$I_p \cap (X\setminus \{y\}) \not= \emptyset,$$ producing a contradiction. Therefore, any limit point of $LP(X)$ must be a limit point of $X$, and $$LP(\overline{X}) = LP(X).$$ Hence, $$LP(\overline{X})\subset \overline{X},$$ so 
+	%\[\begin{split}
+	%	\overline{\overline{X}} &= \overline{X} \cup LP(\overline{X})\\
+	%	\overline{\overline{X}} &= \overline{X}.
+	%\end{split}\]
 \end{proof}
 
 \begin{corollary}  Given any subset $X \subset C$, the closure $\overline{X}$ is closed.
@@ -1299,14 +1315,16 @@ The following is a very useful criterion to determine whether a set of points is
 \end{theorem}
 
 \begin{proof}
-	Since $G$ is open, for every $x\in G$ there exists some interval $I_m$, where $x\in I_m$ and $I_m\subset G$. Let $\mathcal{I}$ be the family of these sets so $$\mathcal{I} = \{I_m \subset G\mid x\in G \text{ and } x\in I_m\}.$$ Therefore, the union of every set in $\mathcal{I}$ must contain every element of $G$, so $$G\subset \bigcup_m \ I_m.$$. Since each set $I_m$ is a subset of $G$, $$\bigcup_m \ I_m \subset G.$$ Therefore, $G$ is the union of intervals. 
+	Since $G$ is open, for every $x\in G$ there exists some interval $I_m$, where $x\in I_m$ and $I_m\subset G$. Let $\mathcal{I}$ be the family of sets defined as $$\mathcal{I} = \{I_m \subset G\mid x\in G \text{ and } x\in I_m\}.$$ Since every element of $G$ is contained in at least one $I_m\in \mathcal{I}$, the union of every set in $\mathcal{I}$ must contain every element of $G$, so $$G\subset \bigcup_m \ I_m.$$ Since each set $I_m$ is a subset of $G$, $$\bigcup_m \ I_m \subset G.$$ Therefore, $G$ is the union of intervals. 
 \end{proof}
 
 
 \begin{exercise}  Do there exist subsets $X \subset C$ that are neither open nor closed?
 \end{exercise}
 
-
+\begin{proof}[Example]
+	The set $(0,1]$ is neither open nor closed. It is not closed because $0$ is a limit point of $(0,1]$ and $0\notin (0,1]$. It is not open as the complement is $(-\infty,0] \cup (1,\infty)$ is not closed as $1$ is a limit point of $(1,\infty)$, and $1\notin (1,\infty)$.
+\end{proof}
 
 \begin{theorem}  Let $\{X_{\lambda} \}$ be an arbitrary collection of closed subsets of a continuum $C.$  Then the intersection
 \[
@@ -1314,6 +1332,10 @@ The following is a very useful criterion to determine whether a set of points is
 \]
 is closed.
 \end{theorem}
+
+\begin{proof}
+	Let $p$ be a limit point of $$\bigcap_{\lambda} X_{\lambda},$$ and assume for contradiction that $$p\notin \bigcap_{\lambda} X_{\lambda}.$$ By Definition 2.15, for every interval $I$ where $p\in I$, $$I \cap \left( \bigcap_{\lambda} X_{\lambda} \right) \setminus \{p\} \not= \emptyset.$$ Let $I_y$ be one such interval. There must then exist some $y\not=p$ such that $y\in I_y$ and $$y\in \left( \bigcap_{\lambda} X_{\lambda} \right) \setminus \{p\}.$$ By the definition of the intersection $y\in X_{\lambda}\setminus \{p\}$ for all $X_{\lambda}$. Therefore, for each $X_{\lambda}$, it must be true that $y\in I_y \cap X_{\lambda}\setminus \{p\}$, meaning the intersection is nonempty. Since the choice of $I_y$ was arbitrary, it must be true that for any interval $I$ where $p\in I$, and for every $X_{\lambda}$, $$I \cap X_{\lambda}\setminus \{p\} \not= \emptyset.$$ Therefore, $p$ is a limit point of every set $X_{\lambda}$, and since each $X_{\lambda}$ is closed, $p$ is in every set $X_{\lambda}$. Thus, by the definition of intersection, $$p\in \bigcap_{\lambda} X_{\lambda}.$$ Therefore, by contradiction, $$\bigcap_{\lambda} X_{\lambda}$$ must contain its limit points and be closed.
+\end{proof}
 
 \begin{theorem} \label{*} Let $G_1, \dotsc, G_n$ be a finite collection of open subsets of a continuum $C.$.  Then the intersection $G_1 \cap \dotsm \cap G_n$ is open.
 \end{theorem}
