@@ -1123,7 +1123,15 @@ It may seem strange that we are defining $\R$ here.  Surely, we already know wha
 	
 	To show that $\R$ has no first point, assume for contradiction that it does have first point or first cut. Let this cut be defined as $C_f\in\R$. Since $C_f$ must be nonempty, there must exist some point $p\in C_f$ where $p\in \Q$. Since $p\in \Q$, by Lemma 3.33, we can form a rational cut $C_p$. Seeing as every $x\in C_p$ must be less than $p$, and $p\in C_f$, every $x\in C_f$ as well. Since $C_f$ has no largest point, there must also exist $q\in C_f$ where $p<q$, and $q\notin C_p$. Therefore, $C_p \prec C_f$, contradicting that $C_f$ is the first cut of $\R$, so $\R$ must not have a first point.
 	
-	To show that $\R$ has no last point, assume for contradiction that it does have a last point or last cut. Let this cut be defined as $C_l\in\R$. Since no cut can be all of $\Q$, $\Q\setminus C_l$ is nonempty. Let $d\in \Q\setminus C_l$. 
+	To show that $\R$ has no last point, assume for contradiction that it does have a last point or last cut. Let this cut be defined as $C_l\in\R$. Since no cut can be all of $\Q$, $\Q\setminus C_l$ is nonempty. Let $d\in \Q\setminus C_l$ and fix any $a\in C_l$. Due to the trichotomy property of the ordering on $\Q$, $a$ and $d$ must fit one of three relations: $a<d$, $a=d$, or $a>d$.
+	
+	It cannot be true that $d>a$, as it follows that $d\in C_l$ and could not be in $\Q\setminus C_l$. 
+	
+	It cannot be true that $d=a$. Since $a$ is not the largest element of $C_l$, there exists $b\in C_l$ such that $a<b$. Therefore, $d<b$ and $d\in C_l$. This contradicts our choice of $d\in\Q\setminus C_l$.
+	
+	By elimination, $d>a$.
+	
+	Since $d\in \Q$, $d+1\in\Q$, and the rational cut $C_{d+1}$ can be formed. Since $d<d+1$
 \end{proof}
 
 \begin{exercise}
