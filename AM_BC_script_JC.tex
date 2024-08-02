@@ -1242,14 +1242,14 @@ Let $X$ be a subset of $C$.  The \emph{closure} of $X$ is the subset $\overline{
 	Since $\overline{X} = X \cup LP(X)$, if $p\in LP(\overline{X})$, $p$ must be a limit point of $X$ or a limit point of $LP(X)$ by Theorem 3.23. Consider any limit point $p$ of $LP(X)$. By Definition 2.15, for every interval $I$ with $p\in I$, it must be true that $$I \cap (LP(X)\setminus \{p\}) \not= \emptyset.$$ Let $I_1$ be one such interval. It must be true that there exists some $y\in I_1$ and $y\in LP(X)$. Therefore, $y$ is a limit point of $X$ and for every interval $I^\prime$ where $y\in I^\prime$ it is true that $$I^\prime \cap (X\setminus \{y\}) \not= \emptyset.$$ Construct interval $I_2$ as follows. Since $y\not=p$, by Theorem 3.25, disjoint intervals $I_y$ and $I_p$ exist with $y\in I_y$ and $p\in I_p$. Since $y,p\in I_1$ and $y\in I_y$, by Theorem 3.20, we can define the interval $I_2 = I_1 \cap I_y$ such that $y\in I_2$ and $p\notin I_2$. Therefore, $$I_2 \cap (X\setminus \{y\}) \not= \emptyset.$$ Since $p\notin I_2$ the above intersection is equivalent to $$I_2 \cap (X\setminus \{y,p\}) \not= \emptyset.$$ Since $I_2\subset I_1$ and $X\setminus \{y,p\} \subset X\setminus \{p\}$, it must bet true that $$I_1 \cap (X\setminus \{p\}) \not= \emptyset.$$  Seeing as the choice of $I_1$ and $I_2$ was arbitrary, this applies for any pair of $I$ and $I^\prime$. Thus, given that $p$ is a limit point of $LP(X)$ it has been shown that $p$ is a limit point of $X$. So
 	\[\begin{split}
 		LP(\overline{X}) &= LP(X\cup LP(X))\\
-		LP(\overline{X}) &= LP(X)
-	\end{split}\].
+		LP(\overline{X}) &= LP(X).
+	\end{split}\]
 	Therefore,
 	\[\begin{split}
 		\overline{\overline{X}} &= \overline{X} \cup LP(\overline{X})\\
 		\overline{\overline{X}} &= \overline{X} \cup LP(X)\\
-		\overline{\overline{X}} &= \overline{X}
-	\end{split}\].
+		\overline{\overline{X}} &= \overline{X}.
+	\end{split}\]
 	
 	%and assume for contradiction that $p$ is not a limit point of $X$. By Definition 2.15, there must exist $I_p$ with $p\in I_p$ where $$I_p \cap (LP(X)\setminus \{p\}) \not= \emptyset \text{ and } I_p \cap (X\setminus \{p\}) = \emptyset.$$ Let $y\in I_p \cap (LP(X)\setminus \{p\})$. It must be true that $y\in I_p$ and $y\in LP(X)$. Therefore, $y$ is a limit point of $X$ and for every interval $I$ where $y\in I$ it is true that $$I \cap (X\setminus \{y\}) \not= \emptyset.$$ However, $y\in I_p$ so it must be true that $$I_p \cap (X\setminus \{y\}) \not= \emptyset,$$ producing a contradiction. Therefore, any limit point of $LP(X)$ must be a limit point of $X$, and $$LP(\overline{X}) = LP(X).$$ Hence, $$LP(\overline{X})\subset \overline{X},$$ so 
 	%\[\begin{split}
