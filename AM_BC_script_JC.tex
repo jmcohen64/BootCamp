@@ -1256,17 +1256,18 @@ Let $X$ be a subset of $C$.  The \emph{closure} of $X$ is the subset $\overline{
 \begin{proof}
 	By the definition of closure, $\overline{\overline{X}} = \overline{X} \cup LP(\overline{X})$. To arrive at the desired conclusion, it needs to be shown that $LP(\overline{X})\subset \overline{X}$, and thereby $\overline{X} \cup LP(\overline{X}) = \overline{X}$. 
 	
-	Since $\overline{X} = X \cup LP(X)$, if $p\in LP(\overline{X})$, $p$ must be a limit point of $X$ or a limit point of $LP(X)$ by Theorem 3.23. Consider any limit point $p$ of $LP(X)$. Let $p\in I_1$. By Definition 2.15, $$I_1 \cap (LP(X)\setminus \{p\}) \not= \emptyset.$$ There must then exist some $y\in I_1$ and $y\in LP(X)$. Therefore, $y$ is a limit point of $X$. Construct interval $I_2$, where $y\in I_2$, as follows. Since $y\not=p$, by Theorem 3.25, disjoint intervals $I_y$ and $I_p$ exist with $y\in I_y$ and $p\in I_p$. Since $y,p\in I_1$, by Theorem 3.20, we can define the interval $I_2 = I_1 \cap I_y$ such that $y\in I_2$ and $p\notin I_2$. Since $y\in LP(X)$ and $y\in I_2$, by definition 2.25, $$I_2 \cap (X\setminus \{y\}) \not= \emptyset.$$ Since $p\notin I_2$ the above intersection is equivalent to $$I_2 \cap (X\setminus \{y,p\}) \not= \emptyset.$$ Since $I_2\subset I_1$ and $X\setminus \{y,p\} \subset X\setminus \{p\}$, it must bet true that $$I_1 \cap (X\setminus \{p\}) \not= \emptyset.$$ Seeing as $I_2$ can be constructed from any $I_1$, and the choice of $I_1$ was arbitrary for any limit point $p$ of $LP(X)$, $LP(LP(X))\subset LP(X)$. So, 
-	\[\begin{split}
-		LP(\overline{X}) &= LP(X\cup LP(X))\\
-		LP(\overline{X}) &= LP(X).
-	\end{split}\]
-	Therefore,
-	\[\begin{split}
-		\overline{\overline{X}} &= \overline{X} \cup LP(\overline{X})\\
-		\overline{\overline{X}} &= \overline{X} \cup LP(X)\\
-		\overline{\overline{X}} &= \overline{X}.
-	\end{split}\]
+	Since $\overline{X} = X \cup LP(X)$, if $p\in LP(\overline{X})$, $p$ must be a limit point of $X$ or a limit point of $LP(X)$ by Theorem 3.23. Consider any limit point $p$ of $LP(X)$. Let $p\in I_1$. By Definition 2.15, $$I_1 \cap (LP(X)\setminus \{p\}) \not= \emptyset.$$ There must then exist some $y\in I_1$ and $y\in LP(X)$. Therefore, $y$ is a limit point of $X$. Construct interval $I_2$, where $y\in I_2$, as follows. Since $y\not=p$, by Theorem 3.25, disjoint intervals $I_y$ and $I_p$ exist with $y\in I_y$ and $p\in I_p$. Since $y,p\in I_1$, by Theorem 3.20, we can define the interval $I_2 = I_1 \cap I_y$ such that $y\in I_2$ and $p\notin I_2$. Since $y\in LP(X)$ and $y\in I_2$, by definition 2.25, $$I_2 \cap (X\setminus \{y\}) \not= \emptyset.$$ Since $p\notin I_2$ the above intersection is equivalent to $$I_2 \cap (X\setminus \{y,p\}) \not= \emptyset.$$ Since $I_2\subset I_1$ and $X\setminus \{y,p\} \subset X\setminus \{p\}$, it must bet true that $$I_1 \cap (X\setminus \{p\}) \not= \emptyset.$$ Seeing as $I_2$ can be constructed from any $I_1$, and the choice of $I_1$ was arbitrary for any limit point $p$ of $LP(X)$, $LP(LP(X))\subset LP(X)$. 
+	%So, 
+	%\[\begin{split}
+	%	LP(\overline{X}) &= LP(X\cup LP(X))\\
+	%	LP(\overline{X}) &= LP(X).
+	%\end{split}\]
+	%Therefore,
+	%\[\begin{split}
+	%	\overline{\overline{X}} &= \overline{X} \cup LP(\overline{X})\\
+	%	\overline{\overline{X}} &= \overline{X} \cup LP(X)\\
+	%	\overline{\overline{X}} &= \overline{X}.
+	%\end{split}\]
 	
 	%and assume for contradiction that $p$ is not a limit point of $X$. By Definition 2.15, there must exist $I_p$ with $p\in I_p$ where $$I_p \cap (LP(X)\setminus \{p\}) \not= \emptyset \text{ and } I_p \cap (X\setminus \{p\}) = \emptyset.$$ Let $y\in I_p \cap (LP(X)\setminus \{p\})$. It must be true that $y\in I_p$ and $y\in LP(X)$. Therefore, $y$ is a limit point of $X$ and for every interval $I$ where $y\in I$ it is true that $$I \cap (X\setminus \{y\}) \not= \emptyset.$$ However, $y\in I_p$ so it must be true that $$I_p \cap (X\setminus \{y\}) \not= \emptyset,$$ producing a contradiction. Therefore, any limit point of $LP(X)$ must be a limit point of $X$, and $$LP(\overline{X}) = LP(X).$$ Hence, $$LP(\overline{X})\subset \overline{X},$$ so 
 	%\[\begin{split}
@@ -1343,9 +1344,10 @@ The following is a very useful criterion to determine whether a set of points is
 \end{exercise}
 
 \begin{proof}[Example]
-	%The answer depends on the continuum. 
-	The set $(0,1]$ in the reals is neither open nor closed. It is not closed because $0$ is a limit point of $(0,1]$ and $0\notin (0,1]$. It is not open as the complement is $(-\infty,0] \cup (1,\infty)$ is not closed as $1$ is a limit point of $(1,\infty)$, and $1\notin (1,\infty)$.
-	%However, consider any finite set in
+	The answer depends on the continuum. The set $(0,1]$ in the reals is neither open nor closed. It is not closed because $0$ is a limit point of $(0,1]$ and $0\notin (0,1]$. It is not open as the complement is $(-\infty,0] \cup (1,\infty)$ is not closed as $1$ is a limit point of $(1,\infty)$, and $1\notin (1,\infty)$.
+	
+	However there is no such set in $\Z$. Any set in $\Z$ must be closed. Consider any set $A\subset \Z$. For any $z\in A$, an interval $(z-1,z+1)$ can be constructed where $(z-1,z+1)\cap A\setminus\{z\} = \emptyset.$ Therefore, $A$ has no limit points, and as a result, $A$ is closed. 
+	%Consider any finite set in the continuum $\Z$. Let $z\in \Z$. Let interval $I\subset \Z$ be $(z-1,z+1)$. 
 \end{proof}
 
 \begin{theorem}  Let $\{X_{\lambda} \}$ be an arbitrary collection of closed subsets of a continuum $C.$  Then the intersection
@@ -1365,12 +1367,33 @@ is closed.
 \begin{theorem} \label{*} Let $G_1, \dotsc, G_n$ be a finite collection of open subsets of a continuum $C.$.  Then the intersection $G_1 \cap \dotsm \cap G_n$ is open.
 \end{theorem}
 
+\begin{proof}
+	We proceed by induction on the number of open sets included in the intersection. The base case is the case in which there is only one set $G_1$, which is given as open.
+	
+	For the induction hypothesis, assume that the intersection of $n$ open sets is open. Therefore, the intersection $G_1 \cap \dotsm \cap G_n$ is open. Take the intersection with a new open set $G_{n+1}$. If these sets are disjoint, the result is the empty set, which is open. For the case when the intersection is nonempty, let $$x\in \bigcup_{i=1}^n G_i \cap G_{n+1}.$$ Since both are open sets, by Theorem 4.10, there exist intervals $I_1$ and $I_2$, where $x\in I_1,I_2$, and $$I_1 \subset \bigcup_{i=1}^n G_i \quad \text {and} \quad I_2 \subset G_{n+1}.$$ By Theorem 3.20, there exists an interval $I_3$ where $I_3 = I_2 \cap I_1$ and $x\in I_3$. By definition, $I_3\subset I_1,I_2$ so, $$I_3 \subset \bigcup_{i=1}^n G_i \quad \text {and} \quad I_3 \subset G_{n+1}.$$ Thus, 
+	\[\begin{split}
+	I_3 &\subset \bigcup_{i=1}^n G_i \cap G_{n+1}\\
+		&\subset \bigcup_{i=1}^{n+1} G_i.\\
+	\end{split}\]
+	Since the choice of $x$ in the intersection was arbitrary, the intersection is an open set by Theorem 4.10.
+\end{proof}
+
 
 \begin{exercise}  Is it necessarily the case that the intersection of an infinite number of open sets is open? Is it possible to construct an infinite collection of open sets whose intersection is not open?  Equivalently, is it possible to construct an infinite collection of closed sets whose union is not closed?
 \end{exercise} 
 
+\begin{proof}[Example]
+	Consider the family of open sets defined $\mathcal{I} = \{(0,1 + \sfrac{1}{n})\mid \text{ for all } n\in\N\}$. Each set in $\mathcal{I}$ is open. Consider any arbitrarily small $x\in \Q$ where $1+q> 1$. Since $\N$ is unbounded, there must exists $n_0\in N$ where $1/n_0 < q$. Therefore $1+q \notin (0,1 + \sfrac{1}{n_0})$. Thus, the infinite intersection of this family of sets can include no value greater than 1 and is $(0,1]$.
+	
+	Consider the family of open sets defined $\mathcal{J} = \{[0,1 - \sfrac{1}{n}]\mid \text{ for all } n\in\N\}$. Each set in $\mathcal{J}$ is closed. Consider any arbitrarily small $x\in \Q$ where $1-q< 1$. Since $\N$ is unbounded, there must exists $n_0\in N$ where $1/n_0 < q$. Therefore $1-q \in [0,1 + \sfrac{1}{n_0}]$. Thus, the infinite intersection of this family of sets includes every value less than one, but not 1 itself and equals $[0,1)$.
+\end{proof}
+
 \begin{corollary}\label{fortop2}  Let $\{G_{\lambda} \}$ be an arbitrary collection of open subsets of a continuum $C$.  Then the union $\bigcup_{\lambda} G_{\lambda}$ is open.  Let $X_1, \dotsc, X_n$ be a finite collection of closed subsets of a continuum $C$.  Then the union $X_1 \cup \dotsm \cup X_n$ is closed.
 \end{corollary}
+
+\begin{proof}
+	
+\end{proof}
 
 \Cref{union} says that every nonempty open set is the union of a collection of intervals.  This necessary condition for open sets is also sufficient:
 
