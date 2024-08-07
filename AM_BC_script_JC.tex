@@ -1340,7 +1340,7 @@ The following is a very useful criterion to determine whether a set of points is
 	For each $x\in G$, let $I_x$ be an interval containing $x$ and $I_x\subset G$. These intervals must exist by Theorem 4.10. Let $\mathcal{I}$ be the family of sets defined as $$\mathcal{I} = \{I_x \subset G\mid x\in G \text{ and } x\in I_x\}.$$ Let $m\in G$. Then $m$ must be in some interval $I_x$. Therefore, $$m\in \bigcup_x \ I_x,$$ and $$G\subset \bigcup_x \ I_x.$$ Since each set $I_x$ is a subset of $G$, $$\bigcup_x \ I_x \subset G.$$ Therefore, $G$ is the union of intervals. 
 \end{proof}
 
-\begin{exercise}  Do there exist subsets $X \subset C$ that are neither open nor closed?
+\begin{exercise}  Is it true that, for any continuum $C$, there exist subsets $X \subset C$ that are neither open nor closed?
 \end{exercise}
 
 \begin{proof}[Example]
@@ -1350,11 +1350,15 @@ The following is a very useful criterion to determine whether a set of points is
 	%Consider any finite set in the continuum $\Z$. Let $z\in \Z$. Let interval $I\subset \Z$ be $(z-1,z+1)$. 
 \end{proof}
 
-\begin{theorem}  Let $\{X_{\lambda} \}$ be an arbitrary collection of closed subsets of a continuum $C.$  Then the intersection
-\[
+\begin{theorem}  Let $\Lambda$ be an indexing set and $\{X_{\lambda}: \lambda \in \Lambda \}$ be an arbitrary collection of closed subsets of a continuum $C.$  Then the intersection
+	\[
+	\bigcap_{\lambda \in \Lambda} X_{\lambda}
+	\]
+	is closed.  Let us note that we sometimes (lazily) write
+	\[
 	\bigcap_{\lambda} X_{\lambda}
-\]
-is closed.
+	\]
+	when the indexing set is clear from context.
 \end{theorem}
 
 \begin{proof}
@@ -1370,10 +1374,10 @@ is closed.
 \begin{proof}
 	We proceed by induction on the number of open sets included in the intersection. The base case is the case in which there is only one set $G_1$, which is given as open.
 	
-	For the induction hypothesis, assume that the intersection of $n$ open sets is open. Therefore, the intersection $G_1 \cap \dotsm \cap G_n$ is open. Take the intersection with a new open set $G_{n+1}$. If these sets are disjoint, the result is the empty set, which is open. For the case when the intersection is nonempty, let $$x\in \bigcup_{i=1}^n G_i \cap G_{n+1}.$$ Since both are open sets, by Theorem 4.10, there exist intervals $I_1$ and $I_2$, where $x\in I_1,I_2$, and $$I_1 \subset \bigcup_{i=1}^n G_i \quad \text {and} \quad I_2 \subset G_{n+1}.$$ By Theorem 3.20, there exists an interval $I_3$ where $I_3 = I_2 \cap I_1$ and $x\in I_3$. By definition, $I_3\subset I_1,I_2$ so, $$I_3 \subset \bigcup_{i=1}^n G_i \quad \text {and} \quad I_3 \subset G_{n+1}.$$ Thus, 
+	For the induction hypothesis, assume that the intersection of $n$ open sets is open. Therefore, the intersection $G_1 \cap \dotsm \cap G_n$ is open. Take the intersection with a new open set $G_{n+1}$. If these sets are disjoint, the result is the empty set, which is open. For the case when the intersection is nonempty, let $$x\in \bigcap_{i=1}^n G_i \cap G_{n+1}.$$ Since both are open sets, by Theorem 4.10, there exist intervals $I_1$ and $I_2$, where $x\in I_1,I_2$, and $$I_1 \subset \bigcap_{i=1}^n G_i \quad \text {and} \quad I_2 \subset G_{n+1}.$$ By Theorem 3.20, there exists an interval $I_3$ where $I_3 = I_2 \cap I_1$ and $x\in I_3$. By definition, $I_3\subset I_1,I_2$ so, $$I_3 \subset \bigcap_{i=1}^n G_i \quad \text {and} \quad I_3 \subset G_{n+1}.$$ Thus, 
 	\[\begin{split}
-	I_3 &\subset \bigcup_{i=1}^n G_i \cap G_{n+1}\\
-		&\subset \bigcup_{i=1}^{n+1} G_i.\\
+	I_3 &\subset \bigcap_{i=1}^n G_i \cap G_{n+1}\\
+		&\subset \bigcap_{i=1}^{n+1} G_i.\\
 	\end{split}\]
 	Since the choice of $x$ in the intersection was arbitrary, the intersection is an open set by Theorem 4.10.
 \end{proof}
@@ -1388,11 +1392,26 @@ is closed.
 	Consider the family of open sets defined $\mathcal{J} = \{[0,1 - \sfrac{1}{n}]\mid \text{ for all } n\in\N\}$. Each set in $\mathcal{J}$ is closed. Consider any arbitrarily small $x\in \Q$ where $1-q< 1$. Since $\N$ is unbounded, there must exists $n_0\in N$ where $1/n_0 < q$. Therefore $1-q \in [0,1 + \sfrac{1}{n_0}]$. Thus, the infinite intersection of this family of sets includes every value less than one, but not 1 itself and equals $[0,1)$.
 \end{proof}
 
-\begin{corollary}\label{fortop2}  Let $\{G_{\lambda} \}$ be an arbitrary collection of open subsets of a continuum $C$.  Then the union $\bigcup_{\lambda} G_{\lambda}$ is open.  Let $X_1, \dotsc, X_n$ be a finite collection of closed subsets of a continuum $C$.  Then the union $X_1 \cup \dotsm \cup X_n$ is closed.
+\begin{corollary}\label{fortop2} 
+	Let $\Lambda$ be an indexing set and $\{G_{\lambda} : \lambda \in \Lambda \}$ be an arbitrary collection of open subsets of a continuum $C$.  Then the union
+	\[
+	\bigcup_{\lambda} G_{\lambda}
+	\]
+	is open.  Let $X_1, \dotsc, X_n$ be a finite collection of closed subsets of a continuum $C$.  Then the union $X_1 \cup \dotsm \cup X_n$ is closed.
 \end{corollary}
 
 \begin{proof}
+	By Theorem 2.5, 
+	\[
+	C\setminus \bigcup_{\lambda} G_{\lambda} = \bigcap_{\lambda} \left( C\setminus G_{\lambda}\right).
+	\]
+	By Theorem 4.8, each $C\setminus G_{\lambda}$ is closed. By Theorem 4.16, the intersection of all the closed sets $C\setminus G_{\lambda}$ is a closed set. Therefore, the intersection of every set $G_{\lambda}$ is an open set by Theorem 4.8.
 	
+	By Theorem 2.5,
+	\[
+	C\setminus \bigcup_{\lambda} X_{\lambda} = \bigcap_{\lambda} \left( C\setminus X_{\lambda}\right).
+	\]
+	Each $C\setminus X_{\lambda}$ is an open set by Definition 4.8. By Theorem 4.17, the intersection of all the open sets $C\setminus X_{\lambda}$ is an open set. Therefore, the intersection of every set $X_{\lambda}$ is a closed set by Theorem 4.8.
 \end{proof}
 
 \Cref{union} says that every nonempty open set is the union of a collection of intervals.  This necessary condition for open sets is also sufficient:
@@ -1402,9 +1421,18 @@ is closed.
  Let $G \subset C$ be nonempty.  Then $G$ is open if and only if $G$ is the union of a collection of intervals.
 \end{corollary}
 
+\begin{proof}
+	We begin by proving the forward implication. If $G$ is the union of a collection of intervals, since an interval is an open set by Corollary 4.11, $G$ is open by Theorem 4.19.
+	
+	To prove the reverse implication, assume $G$ is open. By Theorem 4.14, $G$ is the union of a collection of intervals.
+\end{proof}
+
 \begin{corollary} If $(a, b)$ is an interval in $C,$ then $\ext(a,b)$ is open.
 \end{corollary} 
 
+\begin{proof}
+	By Lemma 3.16, $\ext{(a,b)}=\{x\in C\mid x<a\}\cup\{x\in C\mid b<x\}$. By Corollary 4.13, both $\{x\in C\mid x<a\}\text{ and }\{x\in C\mid b<x\}$ are open. The union of open sets is open by Corollary 4.19, so $\ext{(a,b)}$ is open. 
+\end{proof}
 
 %
 %
@@ -1439,7 +1467,11 @@ Let $X\subset C$. Then $X$ is {\it disconnected} if it may be written as $X=A\cu
 \begin{exercise} Let $C$ be a continuum and $a\in C.$ Prove that $C\setminus\{a\}$ is a disconnected continuum.
 \end{exercise} 
 
-
+\begin{proof}[Solution]
+	If $a$ is removed from $C$, it still satisfies the axioms of a continuum as if $C$ is nonempty and has no first or last point, $C\setminus \{a\}$ will be nonempty and have no first or last point. Since every element of $C$ satisfies the ordering property, every element of $C\setminus \{a\}$ satisfies the same ordering. 
+	
+	Observe that $C\setminus \{a\} = (-\infty, a) \cup (a,\infty)$, where $(-\infty, a) \text { and } (a,\infty)$ are disjoint. By Definition 4.22, $C\setminus \{a\}$ is disconnected. 
+\end{proof}
 
 \section{Connectedness and boundedness}
 
@@ -1452,22 +1484,40 @@ A continuum is connected.
 The only subsets of a continuum $C$ that are both open and closed are $\emptyset$ and~$C$.
 \end{theorem}
 
+\begin{proof}
+	Let $A\subset C$ be a set that is both open and closed. By Definition 4.8, $C\setminus A$ is both open and closed. For any set $A\cup C\setminus A = C$. Both $A$ and $C\setminus A$ are open, and by definition of the complement $A$ and  $C\setminus A$ are disjoint. Therefore, $C$ is the union of two disjoint open sets and is disconnected. This contradicts Axiom 5.1, so this set $A$ cannot exist. 
+\end{proof}
+
 \begin{theorem}
 For all $x, y \in C$, if $x < y$, then there exists $z \in C$ such that $z$ is in between $x$ and $y$.
 \end{theorem}
+
+\begin{proof}
+	Assume for contradiction that no such $z$ exists. Form intervals $(-\infty, y)$ and $(x,\infty)$. Since $x < y$, $(-\infty, y)\cup(x,\infty)=C$. These intervals are open and the intersection $(-\infty, y)\cap(x,\infty)= (a,b)$ is empty by assumption. Therefore, $C$ is disconnected by Definition 4.22, producing a contradiction. 
+\end{proof}
 
 \begin{corollary}
 Every interval is infinite.
 \end{corollary}
 
+\begin{proof}
+	Assume for contradiction that an interval $I = (a,b)$, where $a,b\in C$, is finite and nonempty. It must have a first point $a_f\in I$ and a last point $a_l\in I$ by Lemma 3.8. By Definition of an interval, $a<a_f$, thus interval $(a,a_f)$ can be formed. By Theorem 5.3, there must exist $b\in (a,a_f)$, but this would contradict $a_f$ as a first point of $I$. Therefore, by contradiction, no finite interval can exist. 
+\end{proof}
+
 \begin{corollary}  Every point of $C$ is a limit point of $C$.  
 \end{corollary}
+
+\begin{proof}
+	Assume there exists $p\in C$ where $p$ is not a limit point of $C$. Then there exists an interval $I$, where $p\in I$, and $I\cap C\setminus\{p\}=\emptyset$. This means that $I\cap C= \{p\}$, which contradicts Corollary 5.4 and every interval being infinite.
+\end{proof}
 
 \begin{corollary} 
 Every point of an interval $(a,b)$ is a limit point of $(a,b)$.
 \end{corollary}
 
-
+\begin{proof}
+	Let $I = (a,b)$ and $p\in I$. This interval is open by Corollary 4.7, so there must exist an interval $I_p$ where $p\in I_p$ and $I_p\subset (a,b)$. Since both $I$ and $I_p$ are intervals containing $p$, we can define the interval $I^\prime$ containing $p$ as $I\cap I_p = I^\prime$ by Theorem 3.20. By Corollary 5.4, this interval is infinite. Thus $I\setminus\{p\}\cap I_p \not= \emptyset$. Since the choice of $p$ in $I$ was arbitrary, any point of $I$ is a limit point of $I$.
+\end{proof}
 
 
 We will now introduce boundedness.   The first definition should be intuitively clear.  The second is subtle and powerful.  
