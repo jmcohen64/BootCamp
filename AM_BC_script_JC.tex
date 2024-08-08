@@ -1576,13 +1576,11 @@ If $p<s$, then there exists an $x\in X$ such that $p < x \le s$.
 \end{theorem}
 
 \begin{proof}
-	Let $x$ be any element in $(a,b)$. Since this interval is the set of value such that $x<a$ and $x>b$, $a$ and $b$ satisfy the definitions of upper and lower bounds respectively. Consider any other $b^\prime > a$. %By the trichotomy property of the ordering, three relations are possible: $b<b^\prime$, $b>b^\prime$, $b=b^\prime$.
+	Let $x$ be any element in $(a,b)$. Since this interval is the set of values such that $x<a$ and $x>b$, $a$ and $b$ satisfy the definitions of upper and lower bounds respectively. 
 	
-	If $b>b^\prime$, then there exists an interval $(b^\prime,b)$. This interval is nonempty by Corollary 5.4, so let $y\in (b^\prime,b)$. Thus, $y < b$, so $y\in (a,b)$. Since, $b^\prime < y$, $b^\prime$ is not an upper bound for $(a,b)$. 
+	Consider any other $b^\prime > a$. If $b>b^\prime$, then there exists an interval $(b^\prime,b)\subset (a,b)$. This interval is nonempty by Corollary 5.4, so let $y\in (b^\prime,b)$. Thus, $y\in (a,b)$. Since, $b^\prime < y$, $b^\prime$ is not an upper bound for $(a,b)$. Therefore, if $b \ge b^\prime$, $b^\prime$ is an upper bound for $(a,b)$, which means $b$ is the supremum of $(a,b)$.
 	
-	Therefore, if $b \ge b^\prime$, $b^\prime$ is an upper bound for $(a,b)$, which means $b$ is the supremum of $(a,b)$.
-	
-	
+	Consider any other $a^\prime < b$. If $a<a^\prime$, then there exists an interval $(a,a^\prime)\subset (a,b)$. This interval is nonempty by Corollary 5.4, so let $z\in (a,a^\prime)$. Thus, $z\in (a,b)$. Since, $a^\prime > z$, $a^\prime$ is not a lower bound for $(a,b)$. Therefore, if $a \ge a^\prime$, $a^\prime$ is lower bound for $(a,b)$, which means $a$ is the infimum of $(a,b)$.
 \end{proof}
 
 
@@ -1592,7 +1590,9 @@ Suppose that $\sup X$ exists and $\sup X \notin X$.  Then $\sup X$ is a limit po
 \end{lemma} 
 
 \begin{proof}
-	Let $s = \sup X$. By Lemma 5.10, for any $p<s$, there exists $x\in X$ such that $p < x \le s$. Since $s\notin X$, it must be true that $p < x < s$. Let $b\in C$ where $b>s$. Then, the interval $(p,b)$ exists with $x,s\in (p,b)$. Since, $x\in X$ as well,  $(p,b) \cap X\setminus\{s\} \not= \emptyset$. Since the choice of $p<s$ and $b>s$ was arbitrary, $s$ is a limit point of $X$.
+	Let $s = \sup X$. By Lemma 5.10, for any $p<s$, there exists $x\in X$ such that $p < x \le s$. Since $s\notin X$, it must be true that $p < x < s$. Since $C$ has not last point, let $b\in C$ where $b>s$. Then, the interval $(p,b)$ exists with $x,s\in (p,b)$. Since, $x\in X$ as well,  $(p,b) \cap X\setminus\{s\} \not= \emptyset$. Since the choice of $p<s$ and $b>s$ was arbitrary, $s$ is a limit point of $X$.
+	
+	Let $i = \inf X$. By Lemma 5.10 for infimum, for any $p>i$, there exists $x\in X$ such that $p > x \ge i$. Since $i\notin X$, it must be true that $p > x > i$. Since $C$ has no first point, let $b\in C$ where $b<i$. Then, the interval $(b,p)$ exists with $x,i\in (b,p)$. Since, $x\in X$ as well,  $(b,p) \cap X\setminus\{i\} \not= \emptyset$. Since the choice of $p>i$ and $b<i$ was arbitrary, $i$ is a limit point of $X$.
 \end{proof}
 
 \begin{corollary}  Both $a$ and $b$ are limit points of the interval $(a,b)$.
@@ -1630,7 +1630,9 @@ Then $\Omega(X)$ is open.
 \end{lemma}
 
 \begin{proof}
-	Let $y\in \Psi(X)$. Since $y$ is not an upper bound for $X$, there must exist $x\in X$ such that $y<x$. Therefore, by Theorem 5.3, there exists $z\in C$ such that $y<z$ and $z<x$. Form the interval $(y-1,z)$. Since $y\in \Psi(X)$, $y-1\in \Psi(X)$. Since $z<x$, $z\in \Psi(X)$. Thus, $y\in (y-1,z)$ and $(y-1,z)\subset \Psi(X)$. Since the initial choice of $y$ was arbitrary, $\Psi(X)$ is an open set.   
+	Let $y\in \Psi(X)$. Since $y$ is not an upper bound for $X$, there must exist $x\in X$ such that $y<x$. Therefore, by Theorem 5.3, there exists $z\in C$ such that $y<z$ and $z<x$. Since $C$ is a continuum with no first point, let $a\in C$ such that $a<y$. Form the interval $(a,z)$. Since $y\in \Psi(X)$, and $a<y$, $a\in \Psi(X)$. Because $z<x$, $z\in \Psi(X)$. Thus, $y\in (a,z)$ and $(a,z)\subset \Psi(X)$. Since the initial choice of $y$ was arbitrary, $\Psi(X)$ is an open set.
+	
+	Let $y\in \Omega(X)$. Since $z$ is not a lower bound for $X$, there must exist $x\in X$ such that $y>x$. Therefore, by Theorem 5.3, there exists $z\in C$ such that $y>z$ and $z>x$. Form the interval $(y-1,z)$. Since $y\in \Psi(X)$, $y-1\in \Psi(X)$. Since $z<x$, $z\in \Psi(X)$. Thus, $y\in (y-1,z)$ and $(y-1,z)\subset \Psi(X)$. Since the initial choice of $y$ was arbitrary, $\Psi(X)$ is an open set.  
 \end{proof}
 
 \begin{theorem}  Suppose that $X$ is nonempty and bounded above. Then $\sup X$ exists. Similarly, if $X$ is nonempty and bounded below, then $\inf X$ exists.
@@ -1650,19 +1652,16 @@ Then $\Omega(X)$ is open.
 	Consider any nonempty, closed, and bounded set. By Theorem 5.16, $\sup (X)$ and $\inf (X)$ exist. Let $s = \sup (X)$ and $i = \inf (X)$.  Assume for contradiction that $i,s\notin X$. By Lemma 5.12, $i$ and $s$ are limit points of $X$. Since, $X$ is closed so $i,s\in X$. Thus, for all $x\in X$, $i \le x \le s$. Since, $i,s\in X$, $i$ and $s$ are the first and last points of the set by Definition 3.5.
 	
 	%Now, for all $x\in X$, $i < x < s$. By Lemma 5.10, for any $p\in X$ such that $i < p < s$, there exists $q,t\in X$ such that $i < q < p$ and $p < t < s$. Therefore, $X$ has no first and last point. 
-\end{proof}
 
-\begin{proof}
-	
-	
 	%Let $A$ be any nonempty, closed, and bounded set. By Theorem 5.16, $\sup X$ and $\inf X$ both exist. Consider the contrapositive of Lemma 3.12, which states that if $\sup X$ is not a limit point, then either $\sup X$ does not exist, or $\sup X \in X$. Since $\sup X$ exists, 
 \end{proof}
 
 \begin{exercise}  Is this true for $\mathbb{Q}$?
 \end{exercise}
 
-
-
+\begin{proof}[Counterexample]
+	Consider the set $C = \{q\in \Q \mid q^2 < 2\}$ which represents the interval $(-\sqrt{2},\sqrt{2}) \subset \Q$. This interval is bounded, and by Corollary 4.11, is open. By Definition 4.8, the complement $\Q\setminus C = \{q\in \Q \mid q^2 \ge 2\}$ is closed. Since there exists no $q\in \Q$ such that $q^2 = 2$, the complement $\Q\setminus C = \{q\in \Q \mid q^2 > 2\}$. Thus, $\Q\setminus C = (-\infty, -\sqrt{2}) \cup (\sqrt{2},\infty)$ and is also open. Therefore, by Definition 4.8, $C$ is also closed. Thus, $C$ is a closed set in $\Q$ with no first or last point. 
+\end{proof}
 
 \subsection{Building a continuum: the real numbers are connected}
 
@@ -1670,13 +1669,24 @@ Then $\Omega(X)$ is open.
 	Show that $\Q$ is not connected.
 \end{exercise}
 
-
+\begin{proof}[Solution]
+	Consider the set $C = \{q\in \Q \mid q^2 < 2 \text{ or } q<0 \}$. By Exercise 3.35, this set represents a cut. Since a cut has no smallest element and no last point, for any $b\in C$, there exists $a,c\in C$ such that $a<b$ and $b<c$. Thus, interval $(a,c)\subset C$ exists with $b\in (a,c)$. Since the choice of $b$ was arbitrary, $C$ is open.
+	
+	Now consider $\Q \setminus C = \{q\in \Q \mid q^2 \ge 2 \text{ and } q>0 \}$. Since there exists no $q\in \Q$ such that $q^2 = 2$, $\Q \setminus C = \{q\in \Q \mid q^2 > 2 \text{ and } q>0 \}$. This has no last point by construction, and has no first point by Exercise 3.35. Therefore for any $e\in \Q\setminus C$, there exists $d,f\in \Q\setminus C$ such that $d<e$ and $e<f$. Thus, interval $(e,f)\subset \Q\setminus C$ exists with $e\in (d,f)$. Since the choice of $d$ was arbitrary, $\Q\setminus C$ is open.
+	
+	Since $C \cup \Q\setminus C = \Q$, and $C \cap \Q\setminus C = \emptyset$, with $C$ and $\Q\setminus C$ both being open, $\Q$ is disconnected. 
+\end{proof}	
 
 %Suppose that $\cA$ and $\cB$ are open, disjoint subsets of $\R$ such that
 %	\[
 %		\cA \cup \cB = \R.
 %	\]
 %	
+
+\begin{lemma}
+	Let $\Lambda$ be an indexing set, and for all $\lambda\in\Lambda$, let $C_\lambda$ be a cut. Then, $\mathcal{C} = 
+\end{lemma}
+
 \begin{lemma}
 	\begin{enumerate}[(i)]
 		\item Suppose that $\cA \subset \R$ is bounded from above.  Show that $\cA$ has a supremum.
@@ -1684,6 +1694,9 @@ Then $\Omega(X)$ is open.
 	\end{enumerate}
 \end{lemma}
 
+\begin{proof}
+	
+\end{proof}
 
 \begin{lemma}
 Suppose that $\cA$ is an open set in $\R$, and let $A \in \cA$.  If there is $\underline B, \overline B \in \R$ such that $\underline B < A < \overline B$, then there are points $P_1, P_2 \in \R\setminus \cA$ such that
