@@ -1364,7 +1364,9 @@ The following is a very useful criterion to determine whether a set of points is
 \begin{proof}
 	Let $p$ be a limit point of $$\bigcap_{\lambda} X_{\lambda}.$$ Fix any interval $I_p$ such that $p\in I_p$. Thus, $$I_p \cap \left( \bigcap_{\lambda} X_{\lambda} \right) \setminus \{p\} \not= \emptyset.$$
 	Let $$y\in \left( \bigcap_{\lambda} X_{\lambda} \right) \setminus \{p\},$$
-	and fix any $X_{\lambda_0}$. By the definition of intersection, $y\in X_{\lambda_0}\setminus \{p\}$. Since $y\in I_p$, $y\in I_p \cap X_{\lambda}\setminus \{p\}$. Therefore, $p$ is a limit point of $X_{\lambda_0}$. Since $X_{\lambda_0}$ is closed, $p\in X_{\lambda_0}$. Thus, $$p\in \bigcap_{\lambda} X_{\lambda}.$$ Since $p$ was any limit point of  $$\bigcap_{\lambda} X_{\lambda},$$ it must be closed.
+	and fix any $X_{\lambda_0}$. By the definition of intersection, $y\in X_{\lambda_0}\setminus \{p\}$. Since $y\in I_p$, $y\in I_p \cap X_{\lambda}\setminus \{p\}$. Therefore, $p$ is a limit point of $X_{\lambda_0}$. 
+	
+	Since $X_{\lambda_0}$ is closed, $p\in X_{\lambda_0}$. Thus, $$p\in \bigcap_{\lambda} X_{\lambda}.$$ Since $p$ was any limit point of  $$\bigcap_{\lambda} X_{\lambda},$$ it must be closed.
 	%and assume for contradiction that $$p\notin \bigcap_{\lambda} X_{\lambda}.$$ By Definition 2.15, for every interval $I$ where $p\in I$, $$I \cap \left( \bigcap_{\lambda} X_{\lambda} \right) \setminus \{p\} \not= \emptyset.$$ Let $I_y$ be one such interval. There must then exist some $y\not=p$ such that $y\in I_y$ and $$y\in \left( \bigcap_{\lambda} X_{\lambda} \right) \setminus \{p\}.$$ By the definition of the intersection $y\in X_{\lambda}\setminus \{p\}$ for all $X_{\lambda}$. Therefore, for each $X_{\lambda}$, it must be true that $y\in I_y \cap X_{\lambda}\setminus \{p\}$, meaning the intersection is nonempty. Since the choice of $I_y$ was arbitrary, it must be true that for any interval $I$ where $p\in I$, and for every $X_{\lambda}$, $$I \cap X_{\lambda}\setminus \{p\} \not= \emptyset.$$ Therefore, $p$ is a limit point of every set $X_{\lambda}$, and since each $X_{\lambda}$ is closed, $p$ is in every set $X_{\lambda}$. Thus, by the definition of intersection, $$p\in \bigcap_{\lambda} X_{\lambda}.$$ Therefore, by contradiction, $$\bigcap_{\lambda} X_{\lambda}$$ must contain its limit points and be closed.
 \end{proof}
 
@@ -1387,9 +1389,9 @@ The following is a very useful criterion to determine whether a set of points is
 \end{exercise} 
 
 \begin{proof}[Example]
-	Consider the family of open sets defined $\mathcal{I} = \{(0,1 + \sfrac{1}{n})\mid \text{ for all } n\in\N\}$. Each set in $\mathcal{I}$ is open. Consider any arbitrarily small $x\in \Q$ where $1+q> 1$. Since $\N$ is unbounded, there must exists $n_0\in N$ where $1/n_0 < q$. Therefore $1+q \notin (0,1 + \sfrac{1}{n_0})$. Thus, the infinite intersection of this family of sets can include no value greater than 1 and is $(0,1]$.
+	Consider the family of open sets defined $\mathcal{I} = \{(0,1 + \sfrac{1}{n})\mid \text{ for all } n\in\N\}$. Each set in $\mathcal{I}$ is open. Consider any arbitrarily small $x\in \Q$ where $1+x> 1$. Since $\N$ is unbounded, there must exists $n_0\in N$ where $1/n_0 < q$. Therefore $1+x \notin (0,1 + \sfrac{1}{n_0})$. Thus, the infinite intersection of this family of sets can include no value greater than 1 and is $(0,1]$.
 	
-	Consider the family of open sets defined $\mathcal{J} = \{[0,1 - \sfrac{1}{n}]\mid \text{ for all } n\in\N\}$. Each set in $\mathcal{J}$ is closed. Consider any arbitrarily small $x\in \Q$ where $1-q< 1$. Since $\N$ is unbounded, there must exists $n_0\in N$ where $1/n_0 < q$. Therefore $1-q \in [0,1 + \sfrac{1}{n_0}]$. Thus, the infinite intersection of this family of sets includes every value less than one, but not 1 itself and equals $[0,1)$.
+	Consider the family of closed sets defined $\mathcal{J} = \{[0,1 - \sfrac{1}{n}]\mid \text{ for all } n\in\N\}$. Consider any arbitrarily small $q\in \Q$ where $1-q< 1$. Since $\N$ is unbounded, there must exists $n_0\in N$ where $1/n_0 < q$. Therefore $1-q \in [0,1 + \sfrac{1}{n_0}]$. Thus, the infinite intersection of this family of sets includes every value less than one, but not 1 itself and equals $[0,1)$.
 \end{proof}
 
 \begin{corollary}\label{fortop2} 
@@ -1405,7 +1407,7 @@ The following is a very useful criterion to determine whether a set of points is
 	\[
 	C\setminus \bigcup_{\lambda} G_{\lambda} = \bigcap_{\lambda} \left( C\setminus G_{\lambda}\right).
 	\]
-	By Theorem 4.8, each $C\setminus G_{\lambda}$ is closed. By Theorem 4.16, the intersection of all the closed sets $C\setminus G_{\lambda}$ is a closed set. Therefore, the intersection of every set $G_{\lambda}$ is an open set by Theorem 4.8.
+	By Theorem 4.8, each $C\setminus G_{\lambda}$ is closed. By Theorem 4.16, the arbitrary intersection of closed sets is closed. Therefore, the intersection of every set $G_{\lambda}$ is an open set by Theorem 4.8.
 	
 	By Theorem 2.5,
 	\[
@@ -1422,7 +1424,7 @@ The following is a very useful criterion to determine whether a set of points is
 \end{corollary}
 
 \begin{proof}
-	We begin by proving the forward implication. If $G$ is the union of a collection of intervals, since an interval is an open set by Corollary 4.11, $G$ is open by Theorem 4.19.
+	We begin by proving the forward implication. If $G$ is the union of a collection of intervals, $G$ is an interval by Theorem 4.19. Since an interval is an open set by Corollary 4.11, $G$ is open.
 	
 	To prove the reverse implication, assume $G$ is open. By Theorem 4.14, $G$ is the union of a collection of intervals.
 \end{proof}
@@ -1468,7 +1470,7 @@ Let $X\subset C$. Then $X$ is {\it disconnected} if it may be written as $X=A\cu
 \end{exercise} 
 
 \begin{proof}[Solution]
-	If $a$ is removed from $C$, it still satisfies the axioms of a continuum as if $C$ is nonempty and has no first or last point, $C\setminus \{a\}$ will be nonempty and have no first or last point. Since every element of $C$ satisfies the ordering property, every element of $C\setminus \{a\}$ satisfies the same ordering. 
+	If $C$ is nonempty and has no first or last point, $C\setminus \{a\}$ will be nonempty and have no first or last point. Since every element of $C$ satisfies the ordering property, every element of $C\setminus \{a\}$ satisfies the same ordering. 
 	
 	Observe that $C\setminus \{a\} = (-\infty, a) \cup (a,\infty)$, where $(-\infty, a) \text { and } (a,\infty)$ are disjoint. By Definition 4.22, $C\setminus \{a\}$ is disconnected. 
 \end{proof}
@@ -1485,7 +1487,7 @@ The only subsets of a continuum $C$ that are both open and closed are $\emptyset
 \end{theorem}
 
 \begin{proof}
-	Let $A\subset C$ be a set that is both open and closed. By Definition 4.8, $C\setminus A$ is both open and closed. For any set $A\cup C\setminus A = C$. Both $A$ and $C\setminus A$ are open, and by definition of the complement $A$ and  $C\setminus A$ are disjoint. Therefore, $C$ is the union of two disjoint open sets and is disconnected. This contradicts Axiom 5.1, so this set $A$ cannot exist. 
+	Let $A\subset C$ be a set that is both open and closed. By Definition 4.8, $C\setminus A$ is both open and closed. For any set, $A\cup C\setminus A = C$. Both $A$ and $C\setminus A$ are open, and by definition of the complement $A$ and  $C\setminus A$ are disjoint. Therefore, $C$ is the union of two disjoint open sets and is disconnected. This contradicts Axiom 5.1, so this set $A$ cannot exist. 
 \end{proof}
 
 \begin{theorem}
@@ -1493,7 +1495,7 @@ For all $x, y \in C$, if $x < y$, then there exists $z \in C$ such that $z$ is i
 \end{theorem}
 
 \begin{proof}
-	Assume for contradiction that no such $z$ exists. Form intervals $(-\infty, y)$ and $(x,\infty)$. Since $x < y$, $(-\infty, y)\cup(x,\infty)=C$. These intervals are open and the intersection $(-\infty, y)\cap(x,\infty)= (a,b)$ is empty by assumption. Therefore, $C$ is disconnected by Definition 4.22, producing a contradiction. 
+	Assume for contradiction that no such $z$ exists. Form intervals $(-\infty, y)$ and $(x,\infty)$. Since $x < y$, $(-\infty, y)\cup(x,\infty)=C$. These intervals are open and the intersection $(-\infty, y)\cap(x,\infty)= (x,y)$ is empty by assumption. Therefore, $C$ is disconnected by Definition 4.22, producing a contradiction. 
 \end{proof}
 
 \begin{corollary}
@@ -1501,14 +1503,14 @@ Every interval is infinite.
 \end{corollary}
 
 \begin{proof}
-	Assume for contradiction that an interval $I = (a,b)$, where $a,b\in C$, is finite and nonempty. It must have a first point $a_f\in I$ and a last point $a_l\in I$ by Lemma 3.8. By Definition of an interval, $a<a_f$, thus interval $(a,a_f)$ can be formed. By Theorem 5.3, there must exist $b\in (a,a_f)$, but this would contradict $a_f$ as a first point of $I$. Therefore, by contradiction, no finite interval can exist. 
+	Assume for contradiction that an interval $I = (a,b)$, where $a,b\in C$, is finite and nonempty. Then, $I$ must have a first point $a_f\in I$ by Lemma 3.8. By Definition of an interval, $a<a_f$, thus interval $(a,a_f)\subset I$ can be formed. By Theorem 5.3, there must exist $b\in (a,a_f)$. Thus, $b\in I$ and $(b<a_f)$. This contradicts $a_f$ as a first point of $I$. Therefore, by contradiction, no finite interval can exist. 
 \end{proof}
 
 \begin{corollary}  Every point of $C$ is a limit point of $C$.  
 \end{corollary}
 
 \begin{proof}
-	Assume there exists $p\in C$ where $p$ is not a limit point of $C$. Then there exists an interval $I$, where $p\in I$, and $I\cap C\setminus\{p\}=\emptyset$. This means that $I\cap C= \{p\}$, which contradicts Corollary 5.4 and every interval being infinite.
+	Assume there exists $p\in C$ where $p$ is not a limit point of $C$. Then there exists an interval $I$, where $p\in I$, and $I\cap C\setminus\{p\}=\emptyset$. Thus $I\cap C= \{p\}$, which means $I$ is not infinite, which contradicts Corollary 5.4.
 \end{proof}
 
 \begin{corollary} 
@@ -1516,9 +1518,8 @@ Every point of an interval $(a,b)$ is a limit point of $(a,b)$.
 \end{corollary}
 
 \begin{proof}
-	Let $I = (a,b)$ and $p\in I$. This interval is open by Corollary 4.7, so there must exist an interval $I_p$ where $p\in I_p$ and $I_p\subset (a,b)$. Since both $I$ and $I_p$ are intervals containing $p$, the intersection $I\cap I_p$ is an interval containing $p$ by Theorem 3.20. Let this interval be $I^\prime$. By Corollary 5.4, this interval is infinite. Thus $I\setminus\{p\}\cap I_p \not= \emptyset$. Since the choice of $p$ in $I$ was arbitrary, any point of $I$ is a limit point of $I$.
+	Let $(a,b)$ be an interval and $p\in (a,b)$. This interval is open by Corollary 4.7, so let $I_p$ be an interval where $p\in I_p$ and $I_p\subset (a,b)$.  By Corollary 5.4, both intervals are infinite. Thus $(a,b)\setminus\{p\}\cap I_p \not= \emptyset$. Since the choice of $p$ in $(a,b)$ was arbitrary, any point of $(a,b)$ is a limit point of $(a,b)$.
 \end{proof}
-
 
 We will now introduce boundedness.   The first definition should be intuitively clear.  The second is subtle and powerful.  
 
@@ -1552,6 +1553,14 @@ We say that $l$ is a \emph{greatest lower bound} or {\em infimum} and write $l =
 	If $s<s^\prime$, then $s^\prime$ is not a supremum for $X$, and $s = \sup X$ and is unique. 
 
 	If $s>s^\prime$, then $s$ is not a supremum for $X$, and $s^\prime = \sup X$ and is unique.
+	
+	Let $i = \inf X$ and consider any greatest lower bound, $i^\prime$, for $X$. By the trichotomy property, three relations are possible: $i<i^\prime$, $i>i^\prime$, $i=i^\prime$.
+	
+	If $i=i^\prime$, $i = \inf X$ and is unique.
+	
+	If $i<i^\prime$, then $i$ is not a infimum for $X$, and $i^\prime = \inf X$ and is unique. 
+	
+	If $i>i^\prime$, then $i^\prime$ is not a infimum for $X$, and $i = \inf X$ and is unique.
 \end{proof}
 
 
@@ -1590,7 +1599,7 @@ Suppose that $\sup X$ exists and $\sup X \notin X$.  Then $\sup X$ is a limit po
 \end{lemma} 
 
 \begin{proof}
-	Let $s = \sup X$. By Lemma 5.10, for any $p<s$, there exists $x\in X$ such that $p < x \le s$. Since $s\notin X$, it must be true that $p < x < s$. Since $C$ has not last point, let $b\in C$ where $b>s$. Then, the interval $(p,b)$ exists with $x,s\in (p,b)$. Since, $x\in X$ as well,  $(p,b) \cap X\setminus\{s\} \not= \emptyset$. Since the choice of $p<s$ and $b>s$ was arbitrary, $s$ is a limit point of $X$.
+	Let $s = \sup X$. By Lemma 5.10, for any $p<s$, there exists $x\in X$ such that $p < x \le s$. Since $s\notin X$, it must be true that $p < x < s$. Since $C$ has no last point, let $b\in C$ where $b>s$. Then, the interval $(p,b)$ exists with $x,s\in (p,b)$. Since, $x\in X$ as well,  $(p,b) \cap X\setminus\{s\} \not= \emptyset$. Since the choice of $p<s$ and $b>s$ was arbitrary, $s$ is a limit point of $X$.
 	
 	Let $i = \inf X$. By Lemma 5.10 for infimum, for any $p>i$, there exists $x\in X$ such that $p > x \ge i$. Since $i\notin X$, it must be true that $p > x > i$. Since $C$ has no first point, let $b\in C$ where $b<i$. Then, the interval $(b,p)$ exists with $x,i\in (b,p)$. Since, $x\in X$ as well,  $(b,p) \cap X\setminus\{i\} \not= \emptyset$. Since the choice of $p>i$ and $b<i$ was arbitrary, $i$ is a limit point of $X$.
 \end{proof}
@@ -1632,7 +1641,7 @@ Then $\Omega(X)$ is open.
 \begin{proof}
 	Let $y\in \Psi(X)$. Since $y$ is not an upper bound for $X$, there must exist $x\in X$ such that $y<x$. Therefore, by Theorem 5.3, there exists $z\in C$ such that $y<z$ and $z<x$. Since $C$ is a continuum with no first point, let $a\in C$ such that $a<y$. Form the interval $(a,z)$. Since $y\in \Psi(X)$, and $a<y$, $a\in \Psi(X)$. Because $z<x$, $z\in \Psi(X)$. Thus, $y\in (a,z)$ and $(a,z)\subset \Psi(X)$. Since the initial choice of $y$ was arbitrary, $\Psi(X)$ is an open set.
 	
-	Let $y\in \Omega(X)$. Since $z$ is not a lower bound for $X$, there must exist $x\in X$ such that $y>x$. Therefore, by Theorem 5.3, there exists $z\in C$ such that $y>z$ and $z>x$. Form the interval $(y-1,z)$. Since $y\in \Psi(X)$, $y-1\in \Psi(X)$. Since $z<x$, $z\in \Psi(X)$. Thus, $y\in (y-1,z)$ and $(y-1,z)\subset \Psi(X)$. Since the initial choice of $y$ was arbitrary, $\Psi(X)$ is an open set.  
+	Let $y\in \Omega(X)$. Since $y$ is not a lower bound for $X$, there must exist $x\in X$ such that $y>x$. Therefore, by Theorem 5.3, there exists $z\in C$ such that $y>z$ and $z>x$. Since $C$ is a continuum with no last point, let $b\in C$ such that $b>y$. Form the interval $(z,b)$. Since $y<b$, $b\in \Omega(X)$. Since $z>x$, $z\in \Omega(X)$. Thus, $y\in (z,b)$ and $(z,b)\subset \Omega(X)$. Since the initial choice of $y$ was arbitrary, $\Omega(X)$ is an open set.  
 \end{proof}
 
 \begin{theorem}  Suppose that $X$ is nonempty and bounded above. Then $\sup X$ exists. Similarly, if $X$ is nonempty and bounded below, then $\inf X$ exists.
@@ -1642,14 +1651,18 @@ Then $\Omega(X)$ is open.
 	Since $X$ is bounded above, $\Psi(X)$ exists, and is open by Lemma 5.15. The complement $C\setminus \Psi(X)$, which is the set of all upper bounds of $X$, is closed by 
 	Definition 4.8. 
 	
-	Assume for contradiction that for all $x\in C\setminus \Psi(X)$, there exists $y\in C\setminus \Psi(X)$ such that $y<x$. Form interval $(y,x+1)$. Thus, $x\in (y,x+1)$. Since $x\in C\setminus \Psi(X)$, $(x+1)\in C\setminus \Psi(X)$ as well. Therefore, $(y,x+1)\subset C\setminus \Psi(X)$. Since the choice of $x$ was arbitrary, this holds for any $x\in C\setminus \Psi(X)$. Thus,  $C\setminus \Psi(X)$ is open. Therefore, by contradiction, there must exist $s\in C\setminus \Psi(X)$ such that for all $u\in C\setminus \Psi(X)$, $s\le u$. Therefore, $s$ is the supremum of $X$.
+	Assume for contradiction that for all $x\in C\setminus \Psi(X)$, there exists $y\in C\setminus \Psi(X)$ such that $y<x$. Since $C$ is a continuum with no last point, there exists $a\in C$ such that $x<a$. Form interval $(y,a)$. Thus, $x\in (y,a)$. Since $x<a$, $a\in C\setminus \Psi(X)$ as well. Therefore, $(y,a)\subset C\setminus \Psi(X)$. Since the choice of $x$ was arbitrary, this holds for any $x\in C\setminus \Psi(X)$. Thus,  $C\setminus \Psi(X)$ is open. Therefore, by contradiction, there must exist $s\in C\setminus \Psi(X)$ such that for all $u\in C\setminus \Psi(X)$, $s\le u$. Therefore, $s$ is the supremum of $X$.
+	
+	Since $X$ is bounded below, $\Omega(X)$ exists, and is open by Lemma 5.15. The complement $C\setminus \Omega(X)$, which is the set of all lower bounds of $X$, is closed by Definition 4.8. 
+	
+	Assume for contradiction that for all $x\in C\setminus \Omega(X)$, there exists $y\in C\setminus \Omega(X)$ such that $y>x$. Since $C$ is a continuum with no first point, there exists $b\in C$ such that $x>b$. Form interval $(b,y)$. Thus, $x\in (b,y)$. Since $x>b$, $b\in C\setminus \Omega(X)$ as well. Therefore, $(b,y)\subset C\setminus \Omega(X)$. Since the choice of $x$ was arbitrary, this holds for any $x\in C\setminus \Omega(X)$. Thus,  $C\setminus \Omega(X)$ is open. Therefore, by contradiction, there must exist $i\in C\setminus \Omega(X)$ such that for all $l\in C\setminus \Omega(X)$, $i\ge l$. Therefore, $i$ is the supremum of $X$.
 \end{proof}
 
 \begin{corollary}  Every nonempty closed and bounded set has a first point and a last point.
 \end{corollary}
 
 \begin{proof}
-	Consider any nonempty, closed, and bounded set. By Theorem 5.16, $\sup (X)$ and $\inf (X)$ exist. Let $s = \sup (X)$ and $i = \inf (X)$.  Assume for contradiction that $i,s\notin X$. By Lemma 5.12, $i$ and $s$ are limit points of $X$. Since, $X$ is closed so $i,s\in X$. Thus, for all $x\in X$, $i \le x \le s$. Since, $i,s\in X$, $i$ and $s$ are the first and last points of the set by Definition 3.5.
+	Consider any nonempty, closed, and bounded set. By Theorem 5.16, $\sup (X)$ and $\inf (X)$ exist. Let $s = \sup (X)$ and $i = \inf (X)$.  Assume for contradiction that $i,s\notin X$. By Lemma 5.12, $i$ and $s$ are limit points of $X$. Since $X$ is closed,  $i,s\in X$. Thus, for all $x\in X$, $i \le x \le s$. Since, $i,s\in X$, $i$ and $s$ are the first and last points of $X$ by Definition 3.5.
 	
 	%Now, for all $x\in X$, $i < x < s$. By Lemma 5.10, for any $p\in X$ such that $i < p < s$, there exists $q,t\in X$ such that $i < q < p$ and $p < t < s$. Therefore, $X$ has no first and last point. 
 
@@ -1684,8 +1697,16 @@ Then $\Omega(X)$ is open.
 %	
 
 \begin{lemma}
-	Let $\Lambda$ be an indexing set, and for all $\lambda\in\Lambda$, let $C_\lambda$ be a cut. Then, $\mathcal{C} = 
+	Let $\Lambda$ be an indexing set, and for all $\lambda\in\Lambda$, let $C_\lambda$ be a cut. Then, $$\mathcal{C} = \bigcup_{\lambda\in\Lambda}C_\lambda$$ is a cut or all of $\Q$.
 \end{lemma}
+
+\begin{proof}
+	Let $\mathcal{C}\not=\Q$. Since each $C_\lambda$ is nonempty, $\mathcal{C}$ is nonempty.
+	
+	Let $x\in \mathcal{C}$. By definition of union, there exists some $\lambda_0$ such that $x\in C_{\lambda_0}$. Since $C_{\lambda_0}$ is a cut, there exists $x^\prime \in C_{\lambda_0}$ where $x<x^\prime$. And since $C_{\lambda_0}\subset \mathcal{C}$, $x^\prime\in \mathcal{C}$. Since the choice of $x$ was arbitrary, $\mathcal{C}$ has no last point.
+	
+	Let $y\in \mathcal{C}$. By definition of union, there exists some $\lambda_y$ such that $y\in C_{\lambda_y}$. Since $C_{\lambda_y}$ is a cut, if there exists $q\in \Q$ such that $q<y$, $q \in C_{\lambda_y}$. And since $C_{\lambda_y}\subset \mathcal{C}$, $y\in \mathcal{C}$. Since the choice of $y$ was arbitrary, $\mathcal{C}$ satisfies part (iii) of Definition 3.30.
+\end{proof}
 
 \begin{lemma}
 	\begin{enumerate}[(i)]
@@ -1695,11 +1716,48 @@ Then $\Omega(X)$ is open.
 \end{lemma}
 
 \begin{proof}
+	What follows is a proof of part (i). Since $\cA$ is bounded above, the intersection $$\bigcup_{A\in\cA}A \not=\Q.$$ By Lemma 5.21, this intersection is a cut. Let this intersection be $C$. Fix any $B\in\cA$. By construction, $B\subseteq C$. By the arbitrariness of $B$, $C$ is an upper bound for $\cA$. 
 	
+	Fix $x\in C$. By the definition of the union, there exists $A_x \in \cA$ such that $x\in A_x$. Let $U$ be any upper bound for $\cA$. Then, $U$ is an upper bound for $A_x$ and $A_x\preceq U$. Since the choice of $x\in C$ was arbitrary, $C\preceq U$. Thus, $C$ is the supremum of $\cA$.
+	
+	A proof of statement (ii) follows. Consider the family of sets $\mathcal{L} = \{L\in \R \mid L \text{ is a lower bound of } \cA\}$. Since $\cA$ is bounded below, $\mathcal{L}$ is nonempty and bounded above. By Lemma 5.21, let the cut $I$ be defined as $$I = \bigcup_{L\in\mathcal{L}}L.$$ Let $i\in I$. By the definition of union, there must exist $L_i\in \mathcal{L}$ such that $i\in L_i$. Since, $L_i\in \mathcal{L}$, $L_i$ is a lower bound of $\cA$. By the arbitrariness of $i$, $I$ is a lower bound for $\cA$.
+	
+	Let $Y$ be any lower bound of $\cA$. Thus, $Y\in \mathcal{L}$, and $Y\preceq I$. By the arbitrariness of $Y$, for all $L\in \mathcal{L}$, $L\preceq I$. Therefore, $I$ is the infimum of $\cA$.  
 \end{proof}
 
 \begin{lemma}
-Suppose that $\cA$ is an open set in $\R$, and let $A \in \cA$.  If there is $\underline B, \overline B \in \R$ such that $\underline B < A < \overline B$, then there are points $P_1, P_2 \in \R\setminus \cA$ such that
+	If $\cA\subset \R$ is an open set, and $\inf A$ and $\sup A$ exist, $\inf A,\sup A\notin A$.
+\end{lemma}
+
+\begin{proof}
+	Assume for contradiction that $\inf A,\sup A\in A$. Since $\cA$ is open, then there exist intervals $I_i$ and $I_s$ such that $\inf A \in I_i$ and $\sup A \in I_s$ and $I_i,I_s\subset \cA$. Since every interval is infinite by Corollary 5.4, there must exist $j\in I_i$ and $t\in I_s$ such that $j<i$ and $s<t$. Since $I_i,I_s\subset \cA$, $j,t\in \cA$. This contradicts $s,i$ as the supremeum and infimum, and is therefore impossible.
+\end{proof}
+
+
+
+%\begin{lemma}
+%	If two intervals have a point $x$ in common, their union is an interval containing $x$.
+%\end{lemma}
+
+%\begin{proof}
+%	Let $(a,b),(c,d)\subset C$ with $x\in (a,b)$ and $x\in (c,d)$. Thus, $a<x$ and $x<b$. Also, $c<x$ and $x<d$. Let the function $\max(x,y)$ for $x,y\in C$ be defined as
+%	\[\max(x,y) = \begin{cases}
+%		x \quad &\text{if } x\geq y\\
+%		y \quad &\text{if } x<y,\\
+%	\end{cases}\]
+%	Similarly, let the function $\min(x,y)$ for $x,y\in C$ be defined as 
+%	\[\min(x,y) = \begin{cases}
+%		x \quad &\text{if } x\leq y\\
+%		y \quad &\text{if } x>y,\\
+%	\end{cases}\]
+%	The intersection of the intervals $(a,b)$ and $(b,c)$ 
+%	
+%	
+%	By definition 3.10, x is between $\min(a,c)$ and $\max(b,d)$, and by definition 3.13, the set of all possible values for $x$ describe the interval $(\max(a,c),\min(b,d))$.
+%\end{proof}
+
+\begin{lemma}
+Suppose that $\cA$ is an open set in $\R$, and let $A \in \cA$.  If there is $\underline B, \overline B \in \R\setminus \cA$ such that $\underline B < A < \overline B$, then there are points $P_1, P_2 \in \R\setminus \cA$ such that
 \[
 	A \in (P_1, P_2)
 		\quad\text{ and }\quad
@@ -1707,15 +1765,40 @@ Suppose that $\cA$ is an open set in $\R$, and let $A \in \cA$.  If there is $\u
 \]
 \end{lemma}
 
-
-
+\begin{proof}
+	Since $\cA$ is open, by Theorem 4.10, there exists an interval $I\subset \cA$ such that $A\in I$. Define $\mathcal{I}$ to be the family of such intervals. Thus $\mathcal{I} = \{I\subset \cA \mid A\in I\}$. Let $$\tilde{A} = \bigcup_{I\in\mathcal{I}}I.$$ By Corollary 4.19, $\tilde{A}$ is open. Since $\tilde{A}$ is the union intervals each sharing a point $A$ in common, $\tilde{A}$ is an interval containing $A$. 
+	
+	
+	Let $\underline B, \overline B \in \R\setminus \cA$ such that $\underline B < A < \overline B$. Thus, $(\underline B,\overline B)$ is an interval and $\tilde{A}\subset (\underline B,\overline B)$. Since $(\underline B,\overline B)$ is bounded, so is $\tilde{A}$. Hence, $P_1 = \inf\tilde{A}$ and $P_2 = \sup\tilde{A}$ exist by Theorem 5.21. Since $\tilde{A}$ is an interval, define $\tilde{A} = (a,b)$ where $a,b\in \R$. By Theorem 5.11, $a = \inf\tilde{A}$ and $b = \sup\tilde{A}$. Thus $\tilde{A} = (P_1,P_2) \subset \cA$, and by Lemma 5.22, $P_1,P_2\notin \tilde{A}$. 
+	
+	
+	%Consider the set of all $C\in \R$ such that $\underline B < C$ and $C < \overline B$. This is the interval $(\underline B,\overline B) \subset \R$. Consider the intersection $(\underline B,\overline B) \cap \tilde{A}$. Since both are intervals containing $A$, by Theorem 3.20, the intersection is an interval containing $A$. Let this interval be $(P_1,P_2)$.  
+	
+	%Since $(\underline B,\overline B)$ is bounded, and $(a,b)\subset (\underline B,\overline B)$, $(a,b)$ is bounded. Thus, by Lemma 5.21, $\inf (a,b)$ and $\sup (a,b)$ exist. Let $P_1 = \inf (a,b)$ and $P_2 = \sup (a,b)$. 
+	%Let $\underline B, \overline B \in \R\setminus \cA$ such that $\underline B < A < \overline B$. Consider the set of all $C\in \R$ such that $\underline B < C$ and $C < \overline B$. This is the interval $(\underline B,\overline B) \subset \R$.  Let $\tilde{A} = (\underline B,\overline B) \cap \cA$.  Since $(\underline B,\overline B)$ is bounded, and $\tilde{A}\subset (\underline B,\overline B)$, $\tilde{A}$ is bounded. Thus, by Lemma 5.21, $\inf \tilde{A}$ and $\sup \tilde{A}$ exist. Let $P_1 = \inf \tilde{A}$ and $P_2 = \sup \tilde{A}$. Consider the interval $(P_1,P_2)$. Then, $A\in (P_1,P_2)$. 
+	
+	%Since $\tilde{A}\subset \cA$, $\tilde{A} = \{A\in \cA \mid \}$
+	
+	%Since both $(\underline B,\overline B)$ and $\cA$ are open, $\tilde{A}$ is open by Theorem 4.17.
+	
+	%Since, $\tilde{A}$ is open, $P_1,P_2\notin \tilde{A}$ by Lemma 5.22. Since $\tilde{A}\subset \cA$, 
+	
+	%Let $\tilde{A}$ be the set of all $A\in \cA$ such that $\underline B, \overline B \in \R\setminus \cA$ such that $\underline B < A < \overline B$. Thus, $\tilde{A}\subset \cA$. This set is bounded by $\underline B$ and  $\overline B$, so by Lemma 5.21, the infimum and supremum of $\tilde{A}$ exist. Let $P_1 = \inf \tilde{A}$ and $P_2 = \sup \tilde{A}$. By Lemma 5.12, $P_1$ and $P_2$ are limit points of $\tilde{A}$. 
+\end{proof}
 
 \begin{theorem}
 	Show that $\R$ is connected.
 \end{theorem}
 
-
-
+\begin{proof}
+	Assume for contradiction that $\R$ is disconnected. Then, there exist open and disjoint sets $\cA,\cB\subset \R$ such that $\cA \cup \cB = \R$. Fix any $A\in \cA$. When compared to elements in $\cB$ there are only two cases to consider: either $A\prec B$ for all $B\in \cB$ or there exists $\underline{B}\in \cB$ such that $\underline{B}\prec A$.
+	
+	Consider the first case. This means that $\cB$ is bounded below. Therefore, $L = \inf \cB$ exists by Lemma 5.21. For $\cA \cup \cB = \R$, $\cB = \R\setminus \cA$. Because $\cA$ is open, $\cB$ is closed by definition 4.8. Hence, $\inf \cB \in \cB$. But we assumed that $\cB$ is open, and by Lemma 5.23, $\inf \cB \notin \cB$. This case is therefore impossible.
+	
+	Consider the second case. Assuming that $B$ is not the only element of $\cB$, (in which case $\cB$ is not open), let $\overline{B}\in \R$ such that $A\prec \overline{B}$. If $\overline{B}$ does not exist, then $A$ is an upper bound for $\cB$. Thus $S = \sup \cB$ exists by Lemma 5.21. By the same argument above, $\cB$ is closed and $\sup \cB \in \cB$. But we assumed that $\cB$ is open. Thus $\sup \cB \notin \cB$, producing a contradiction. 
+	
+	If $\overline{B}$ exists, then $\underline B < A < \overline B$, and by Lemma 5.23, there exists $P_1, P_2 \in \R\setminus \cA$ such that $A\in (P_1,P_2)$ and $(P_1, P_2)\subset \cA$. Since $(P_1, P_2)$ is bounded, $I = \inf (P_1, P_2)$ and $S = \sup (P_1, P_2)$ exist by Lemma 5.21. And since $(P_1, P_2)$ is an interval, it is open. Thus $I,S\notin (P_1, P_2)$, by Lemma 5.22, and $I,S\notin \cA$. However, $\cB$ is open, so $\R\setminus \cB = \cA$ is closed. Thus, $I,S\in \cA$ producing a contradiction.
+\end{proof}
 
 At this point, we see that $\R$ is a continuum.  (Side note: can you think of any other sets that satisfy the axioms of a continuum?)  All previous results, thus, apply to it.  If you feel inclined, think about how our usual actions of addition, subtraction, multiplication, and division can be defined using the Dedekind cuts.  From this point on, we can always imagine $C$ to be $\R$.  This is not necessary, but it may help with intuition.
 
